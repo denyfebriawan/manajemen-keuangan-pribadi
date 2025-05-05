@@ -9,7 +9,6 @@ Project Manajemen Keuangan Pribadi
 
     - npm install tailwindcss @tailwindcss/cli
     - buat file input.css
-        copy @import @import "tailwindcss";
+        copy @import "tailwindcss";
     - npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
         Sesuaikan path folder input.css nya
-        
