@@ -12,3 +12,21 @@ Project Manajemen Keuangan Pribadi
         copy @import "tailwindcss";
     - npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
         Sesuaikan path folder input.css nya
+
+# cara update 
+    - sebelum mulai ngoding
+    - git fetch 
+    - git pull
+    
+# cara publish
+    - setelah ngoding
+    - git add .
+    - git commit -m "[desc]"
+    - git push
+
+
+
+
+
+
+
