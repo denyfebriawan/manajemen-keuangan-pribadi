@@ -1,3 +1,26 @@
+// Toggle tampilan datepicker
+function tampilkanPemilihTanggal() {
+  const pemilihTanggal = document.getElementById("pemilih-tanggal");
+  pemilihTanggal.classList.toggle("hidden");
+}
+
+// Update teks tanggal setelah dipilih
+function aturTanggalTerpilih(nilaiTanggal) {
+  const elemenTeksTanggal = document.getElementById("tanggal-terpilih");
+
+  const tgl = new Date(nilaiTanggal);
+  const opsi = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const tglFormat = tgl.toLocaleDateString("id-ID", opsi);
+
+  elemenTeksTanggal.textContent = tglFormat;
+  document.getElementById("pemilih-tanggal").classList.add("hidden");
+}
+
 // Function to toggle modal visibility
 function toggleModal() {
   const modal = document.getElementById("modal");

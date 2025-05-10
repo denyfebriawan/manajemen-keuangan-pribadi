@@ -35,7 +35,7 @@
       rel="stylesheet"
     />
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
   </head>
   <body class="bg-base font-display">
     <!-- Navbar -->
@@ -92,14 +92,14 @@
             </div>
           </div>
 
-          <!-- Buttons -->
+          <!-- Right Buttons -->
           <div
             class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2"
           >
             <!-- Tombol Modal Plus -->
             <button
               onclick="toggleModal()"
-              class="cursor-pointer relative flex items-center justify-center h-8 w-8 bg-accent text-md rounded-full focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark hover:bg-primary-soft"
+              class="cursor-pointer relative flex items-center justify-center h-8 w-8 bg-accent text-md rounded-full focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark hover:bg-primary-soft transition duration-300 ease-in-out"
             >
               <i class="fa fa-plus fa-md text-light" aria-hidden="true"></i>
             </button>
@@ -107,7 +107,7 @@
             <!-- Modal -->
             <div
               id="modal"
-              class="fixed inset-0 z-50 bg-black bg-opacity-10 flex items-center justify-center hidden"
+              class="fixed inset-0 z-50 bg-dark/50 flex items-center justify-center hidden"
             >
               <!-- Konten Modal -->
               <div
@@ -117,60 +117,53 @@
                 <div
                   class="flex items-center justify-between p-4 md:p-5 border-b rounded-t"
                 >
-                  <h3 class="text-lg font-semibold text-dark">
+                  <h3 class="text-lg font-semibold text-primary">
                     Transaksi Baru
                   </h3>
                   <button
                     onclick="toggleModal()"
-                    class="absolute top-3 right-3 text-dark hover:text-accent"
+                    class="text-dark hover:text-accent"
                   >
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-xmark"></i>
                   </button>
                 </div>
 
                 <!-- Body Modal -->
-                <form class="p-4 md:p-5">
-                  <div class="grid gap-4 mb-4 grid-cols-2">
-                    <!-- Keterangan -->
-                    <div class="col-span-1">
+                <form class="p-4 md:p-6">
+                  <div class="grid gap-4 mb-4 grid-cols-1 sm:grid-cols-2">
+                    <!-- Kategori -->
+                    <div class="col-span-2 sm:col-span-1">
                       <label
-                        for="name"
+                        for="category"
                         class="block mb-2 text-sm font-medium text-dark"
-                        >Keterangan</label
+                        >Kategori</label
                       >
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                        placeholder="Keterangan"
-                        required
-                      />
+                      <select
+                        id="category"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full p-2.5"
+                      >
+                        <option selected>Pilih Kategori</option>
+                        <option value="mkn">Makanan</option>
+                        <option value="mnm">Minuman</option>
+                        <option value="lndy">Laundry</option>
+                      </select>
                     </div>
 
-                    <!-- Tanggal -->
-                    <div class="col-span-1">
+                    <!-- Jenis Transaksi -->
+                    <div class="col-span-2 sm:col-span-1">
                       <label
-                        for="name"
+                        for="jenis-transaksi"
                         class="block mb-2 text-sm font-medium text-dark"
-                        >Tanggal</label
+                        >Jenis Transaksi</label
                       >
-
-                      <div class="relative max-w-sm">
-                        <div
-                          class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                        >
-                          <i class="fa fa-calendar" aria-hidden="true"></i>
-                        </div>
-                        <input
-                          id="datepicker-autohide"
-                          datepicker
-                          datepicker-autohide
-                          type="text"
-                          class="bg-gray-50 border text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                          placeholder="Select date"
-                        />
-                      </div>
+                      <select
+                        id="jenis-transaksi"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full p-2.5"
+                      >
+                        <option selected>Pilih Jenis</option>
+                        <option value="In">Pemasukan</option>
+                        <option value="Out">Pengeluaran</option>
+                      </select>
                     </div>
 
                     <!-- Harga -->
@@ -184,45 +177,79 @@
                         type="number"
                         name="price"
                         id="price"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full p-2.5"
                         placeholder="100.000"
                         required
                       />
                     </div>
 
-                    <!-- Kategori -->
+                    <!-- Tanggal -->
                     <div class="col-span-2 sm:col-span-1">
                       <label
-                        for="category"
+                        for="datepicker-autohide"
                         class="block mb-2 text-sm font-medium text-dark"
-                        >Kategori</label
+                        >Tanggal</label
                       >
-                      <select
-                        id="category"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                      <div class="relative max-w-sm">
+                        <div
+                          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                        >
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </div>
+                        <input
+                          id="datepicker-autohide"
+                          datepicker
+                          datepicker-autohide
+                          type="text"
+                          class="bg-gray-50 border text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full pl-10 p-2.5"
+                          placeholder="Select date"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Keterangan -->
+                    <div class="col-span-2">
+                      <label
+                        for="keterangan"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Keterangan</label
                       >
-                        <option selected>Pilih Kategori</option>
-                        <option value="In">Pemasukan</option>
-                        <option value="Out">Pengeluaran</option>
-                      </select>
+                      <textarea
+                        name="keterangan"
+                        id="keterangan"
+                        rows="3"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full p-2.5 resize-none"
+                        placeholder="Keterangan"
+                        required
+                      ></textarea>
                     </div>
                   </div>
 
-                  <!-- Tombol Aksi -->
-                  <div class="flex justify-end gap-2">
-                    <button
-                      type="button"
-                      onclick="toggleModal()"
-                      class="px-4 py-2 rounded bg-gray-300 text-dark hover:bg-gray-400"
-                    >
-                      Batal
-                    </button>
+                  <!-- Footer Modal -->
+                  <div class="flex items-center justify-between mt-6">
                     <button
                       type="submit"
-                      class="px-4 py-2 rounded bg-accent text-white hover:bg-primary"
+                      class="text-light flex gap-1 items-center bg-primary hover:bg-accent font-sm rounded-lg text-sm px-5 py-2.5 text-center"
                     >
-                      Simpan
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                      Kategori
                     </button>
+
+                    <div class="flex justify-center items-center gap-2">
+                      <button
+                        type="button"
+                        onclick="toggleModal()"
+                        class="px-4 py-2 rounded-lg bg-gray-300 text-dark hover:bg-gray-400 transition duration-300 ease-in-out"
+                      >
+                        Batal
+                      </button>
+                      <button
+                        type="submit"
+                        class="px-4 py-2 rounded-lg bg-accent text-white hover:bg-primary transition duration-300 ease-in-out"
+                      >
+                        Simpan
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -231,12 +258,12 @@
             <!-- Dropdown-Profile -->
             <details class="relative">
               <summary
-                class="cursor-pointer flex h-8 w-8 items-center justify-center rounded-full bg-primary-soft hover:bg-accent"
+                class="cursor-pointer flex h-8 w-8 items-center justify-center rounded-full bg-primary-soft hover:bg-accent transition duration-300 ease-in-out"
               >
                 <i class="fa fa-user text-light text-md" aria-hidden="true"></i>
               </summary>
               <div
-                class="absolute right-0 mt-2 w-48 rounded-md bg-primary shadow-lg py-1"
+                class="absolute right-0 mt-2 w-48 rounded-lg bg-primary shadow-lg py-1"
               >
                 <a
                   href="#"
@@ -303,10 +330,24 @@
           >
             <i class="fa fa-calendar fa-md" aria-hidden="true"></i>
           </div>
-          <p class="text-md font-bold text-dark">Hari, XX/XX/XXXX</p>
-          <i
-            class="fa-solid fa-chevron-down bg-gray-200 p-0.5 rounded-full cursor-pointer"
-          ></i>
+          <!-- Display Tanggal dan Tombol -->
+          <div class="flex items-center gap-2">
+            <p id="tanggal-terpilih" class="text-md font-bold text-dark">
+              Senin, 05 Mei 2025
+            </p>
+            <i
+              onclick="tampilkanPemilihTanggal()"
+              class="fa-solid fa-chevron-down bg-accent text-light hover:bg-primary p-0.5 rounded-full cursor-pointer transition duration-300 ease-in-out"
+            ></i>
+          </div>
+
+          <!-- Input tanggal (disembunyikan awalnya) -->
+          <input
+            type="date"
+            id="pemilih-tanggal"
+            class="hidden mt-2 w-fit border border-gray-300 bg-gray-100 text-dark text-sm rounded-full px-4 py-2 shadow focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer"
+            onchange="aturTanggalTerpilih(this.value)"
+          />
         </div>
 
         <!-- Ringkasan -->
@@ -427,7 +468,9 @@
             <table
               class="min-w-full text-sm lg:text-md text-left text-gray-700"
             >
-              <thead class="text-sm lg:text-md text-light uppercase bg-accent">
+              <thead
+                class="text-sm lg:text-md text-primary-dark uppercase bg-accent"
+              >
                 <tr>
                   <th class="px-4 py-3">No.</th>
                   <th class="px-4 py-3">Kategori</th>
@@ -463,13 +506,13 @@
                   <td class="flex gap-2 px-4 py-4">
                     <a
                       href="#"
-                      class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition"
+                      class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-edit"></i>
                     </a>
                     <a
                       href="#"
-                      class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition"
+                      class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-trash"></i>
                     </a>
@@ -500,13 +543,13 @@
                   <td class="flex gap-2 px-4 py-4">
                     <a
                       href="#"
-                      class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition"
+                      class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-edit"></i>
                     </a>
                     <a
                       href="#"
-                      class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition"
+                      class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-trash"></i>
                     </a>
@@ -537,13 +580,13 @@
                   <td class="flex gap-2 px-4 py-4">
                     <a
                       href="#"
-                      class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition"
+                      class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-edit"></i>
                     </a>
                     <a
                       href="#"
-                      class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition"
+                      class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-trash"></i>
                     </a>
@@ -615,36 +658,45 @@
             <!-- Dropdown -->
             <details class="relative inline-block">
               <summary
-                class="flex items-center gap-2 bg-gray-200 px-3 rounded-full cursor-pointer text-sm lg:text-md text-dark hover:bg-gray-300 select-none"
+                class="flex items-center gap-2 bg-accent px-3 rounded-full cursor-pointer font-medium text-sm lg:text-md text-primary-dark hover:text-light hover:bg-primary transition duration-300 ease-in-out select-none"
               >
                 Monthly <i class="fa-solid fa-chevron-down text-xs"></i>
               </summary>
-              <ul
-                class="absolute right-0 py-2 mt-2 w-40 bg-primary-soft text-light border border-dark rounded-xl shadow-lg z-10"
+              <ul 
+                class="absolute right-0 py-2 mt-2 w-40 bg-primary-soft text-light font-medium border border-dark rounded-xl shadow-lg z-10"
               >
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-accent"
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm hover:bg-accent hover:text-primary-dark"
                     >Daily</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm bg-accent"
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm bg-accent text-primary-dark"
                     >Weekly</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-accent"
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm hover:bg-accent hover:text-primary-dark"
                     >Monthly</a
                   >
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 text-sm hover:bg-accent"
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm hover:bg-accent hover:text-primary-dark"
                     >Yearly</a
                   >
                 </li>
               </ul>
             </details>
           </div>
+          <!-- body Diagram -->
           <div class="space-y-4">
             <div class="flex justify-between items-center text-sm lg:text-lg">
               <p>Pengeluaran: <span>Rp120.000</span></p>
@@ -659,6 +711,7 @@
             </div>
           </div>
         </div>
+        <!-- end diagram card  -->
       </div>
     </div>
     <!-- Home -->
