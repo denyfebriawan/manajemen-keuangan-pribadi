@@ -1,3 +1,4 @@
+// JS - Dashboard ----------------------------------------------------------|
 // Toggle tampilan datepicker
 function tampilkanPemilihTanggal() {
   const pemilihTanggal = document.getElementById("pemilih-tanggal");
@@ -27,7 +28,7 @@ function toggleModal() {
   modal.classList.toggle("hidden");
 }
 
-// DiagramBar Chart
+// DiagramBar Chart - Diagram
 const chartConfig = {
   series: [
     {
@@ -108,7 +109,7 @@ const chart = new ApexCharts(document.querySelector("#bar-chart"), chartConfig);
 
 chart.render();
 
-// DiagramPie Chart
+// DiagramPie Chart - Laporan
 const chartConfigPie = {
   series: [44, 55, 13, 43, 22],
   chart: {
@@ -158,7 +159,6 @@ const chartOptionsPersen = {
   plotOptions: {
     pie: {
       donut: {
-        
         labels: {
           show: true,
           name: {
@@ -193,3 +193,5 @@ const donutChartPersen = new ApexCharts(
   chartOptionsPersen
 );
 donutChartPersen.render();
+// JS - Dashboard ----------------------------------------------------------|
+

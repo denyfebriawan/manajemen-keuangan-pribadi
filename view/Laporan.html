@@ -4,12 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Title -->
+    <title>ArthaPlan</title>
+
     <!-- Custom Style CSS -->
-    <link href="./src/input.css" rel="stylesheet" />
-    <link href="./src/output.css" rel="stylesheet" />
+    <link href="../src/input.css" rel="stylesheet" />
+    <link href="../src/output.css" rel="stylesheet" />
 
     <!-- icon logo -->
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/logo-SVG.svg"
+      type="image/x-icon"
+    />
 
     <!-- Font Awesome -->
     <link
@@ -25,82 +32,58 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- script Diagram -->
+    <!-- Script Diagram -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
-    <!-- template flowbite -->
-    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <!-- Script flowbite -->
+    <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 
     <link
       href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
       rel="stylesheet"
     />
 
-    <script src="./js/script.js"></script>
+    <script src="../js/script.js" defer></script>
   </head>
   <body class="bg-base font-display">
     <!-- Navbar -->
-    <nav class="bg-primary-dark m-4 rounded-2xl sm:rounded-full shadow-dark">
-      <input id="menu-toggle" type="checkbox" class="peer hidden" />
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between w-full">
-          <!-- Hamburger Button (Mobile) -->
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <label
-              for="menu-toggle"
-              class="inline-flex h-8 w-8 items-center justify-center rounded-md p-2 text-accent bg-primary-soft hover:bg-accent hover:text-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-light cursor-pointer"
+    <header>
+      <nav
+        class="bg-primary-dark px-4 lg:px-6 py-2.5 m-4 rounded-2xl sm:rounded-full shadow-lg"
+      >
+        <div
+          class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto"
+        >
+          <!-- Menu mobile  -->
+          <button
+            data-collapse-toggle="mobile-menu-2"
+            type="button"
+            class="lg:hidden inline-flex h-8 w-8 items-center justify-center rounded-md p-2 text-accent bg-primary-soft hover:bg-accent hover:text-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-light cursor-pointer"
+            aria-controls="mobile-menu-2"
+            aria-expanded="false"
+          >
+            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+          </button>
+
+          <!-- logo -->
+          <a href="#" class="flex items-center">
+            <img
+              src="../assets/images/logo-SVG.svg"
+              class="h-6 mr-3 sm:h-9"
+              alt="Flowbite Logo"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              >ArthaPlan</span
             >
-              <i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i>
-              <!-- <i class="fa-solid fa-xmark fa-lg"></i> -->
-            </label>
-          </div>
+          </a>
 
-          <!-- Logo -->
-          <div
-            class="flex items-center justify-center w-full sm:justify-start sm:w-auto"
-          >
-            <a href="./Dashboard.html">
-              <i class="fa fa-money fa-xl text-accent" aria-hidden="true"></i>
-            </a>
-          </div>
-
-          <!-- Desktop-Menu -->
-          <div
-            class="hidden sm:block absolute left-1/2 transform -translate-x-1/2"
-          >
-            <div class="flex space-x-4">
-              <a
-                href="./Dashboard.html"
-                class="rounded-md bg-accent px-3 py-2 text-sm lg:text-lg font-medium text-light"
-                aria-current="page"
-                >Beranda</a
-              >
-              <a
-                href="./Laporan.html"
-                class="rounded-md px-3 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
-                >Laporan</a
-              >
-              <a
-                href="./riwayat_transaksi.html"
-                class="rounded-md px-3 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
-                >Riwayat</a
-              >
-              <a
-                href="./anggaran.html"
-                class="rounded-md px-3 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
-                >Anggaran</a
-              >
-            </div>
-          </div>
-
-          <!-- Buttons -->
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2"
-          >
+          <!-- Right Buttons -->
+          <div class="flex items-center lg:order-2 gap-2">
             <!-- Tombol Modal Plus -->
             <button
               onclick="toggleModal()"
-              class="cursor-pointer relative flex items-center justify-center h-8 w-8 bg-accent text-md rounded-full focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark hover:bg-primary-soft"
+              class="cursor-pointer relative flex items-center justify-center h-8 w-8 bg-accent text-md rounded-full focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark hover:bg-primary-soft transition duration-300 ease-in-out"
             >
               <i class="fa fa-plus fa-md text-light" aria-hidden="true"></i>
             </button>
@@ -108,70 +91,63 @@
             <!-- Modal -->
             <div
               id="modal"
-              class="fixed inset-0 z-50 bg-black bg-opacity-10 flex items-center justify-center hidden"
+              class="fixed inset-0 z-50 bg-dark/50 flex items-center justify-center hidden"
             >
               <!-- Konten Modal -->
               <div
-                class="bg-light rounded-2xl shadow-md p-2 max-w-md w-full relative"
+                class="bg-light rounded-2xl shadow-lg p-2 max-w-md w-full relative"
               >
                 <!-- Header Modal -->
                 <div
                   class="flex items-center justify-between p-4 md:p-5 border-b rounded-t"
                 >
-                  <h3 class="text-lg font-semibold text-dark">
+                  <h3 class="text-lg font-semibold text-primary">
                     Transaksi Baru
                   </h3>
                   <button
                     onclick="toggleModal()"
-                    class="absolute top-3 right-3 text-dark hover:text-accent"
+                    class="text-dark hover:text-accent"
                   >
-                    <i class="fas fa-times"></i>
+                    <i class="fas fa-xmark"></i>
                   </button>
                 </div>
 
                 <!-- Body Modal -->
-                <form class="p-4 md:p-5">
-                  <div class="grid gap-4 mb-4 grid-cols-2">
-                    <!-- Keterangan -->
-                    <div class="col-span-1">
+                <form class="p-4 md:p-6">
+                  <div class="grid gap-4 mb-4 grid-cols-1 sm:grid-cols-2">
+                    <!-- Kategori -->
+                    <div class="col-span-2 sm:col-span-1">
                       <label
-                        for="name"
+                        for="category"
                         class="block mb-2 text-sm font-medium text-dark"
-                        >Keterangan</label
+                        >Kategori</label
                       >
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
-                        placeholder="Keterangan"
-                        required
-                      />
+                      <select
+                        id="category"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full p-2.5"
+                      >
+                        <option selected>Pilih Kategori</option>
+                        <option value="mkn">Makanan</option>
+                        <option value="mnm">Minuman</option>
+                        <option value="lndy">Laundry</option>
+                      </select>
                     </div>
 
-                    <!-- Tanggal -->
-                    <div class="col-span-1">
+                    <!-- Jenis Transaksi -->
+                    <div class="col-span-2 sm:col-span-1">
                       <label
-                        for="name"
+                        for="jenis-transaksi"
                         class="block mb-2 text-sm font-medium text-dark"
-                        >Tanggal</label
+                        >Jenis Transaksi</label
                       >
-
-                      <div class="relative max-w-sm">
-                        <div
-                          class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
-                        >
-                          <i class="fa fa-calendar" aria-hidden="true"></i>
-                        </div>
-                        <input
-                          id="datepicker-autohide"
-                          datepicker
-                          datepicker-autohide
-                          type="text"
-                          class="bg-gray-50 border text-dark text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                          placeholder="Select date"
-                        />
-                      </div>
+                      <select
+                        id="jenis-transaksi"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full p-2.5"
+                      >
+                        <option selected>Pilih Jenis</option>
+                        <option value="In">Pemasukan</option>
+                        <option value="Out">Pengeluaran</option>
+                      </select>
                     </div>
 
                     <!-- Harga -->
@@ -185,119 +161,176 @@
                         type="number"
                         name="price"
                         id="price"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full p-2.5"
                         placeholder="100.000"
                         required
                       />
                     </div>
 
-                    <!-- Kategori -->
+                    <!-- Tanggal -->
                     <div class="col-span-2 sm:col-span-1">
                       <label
-                        for="category"
+                        for="datepicker-autohide"
                         class="block mb-2 text-sm font-medium text-dark"
-                        >Kategori</label
+                        >Tanggal</label
                       >
-                      <select
-                        id="category"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5"
+                      <div class="relative w-full">
+                        <div
+                          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                        >
+                          <i class="fa fa-calendar" aria-hidden="true"></i>
+                        </div>
+                        <input
+                          id="datepicker-autohide"
+                          datepicker
+                          datepicker-autohide
+                          type="text"
+                          class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full pl-10 p-2.5 resize-none"
+                          placeholder="Select date"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Keterangan -->
+                    <div class="col-span-2">
+                      <label
+                        for="keterangan"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Keterangan</label
                       >
-                        <option selected>Pilih Kategori</option>
-                        <option value="In">Pemasukan</option>
-                        <option value="Out">Pengeluaran</option>
-                      </select>
+                      <textarea
+                        name="keterangan"
+                        id="keterangan"
+                        rows="3"
+                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full p-2.5 resize-none"
+                        placeholder="Keterangan"
+                        required
+                      ></textarea>
                     </div>
                   </div>
 
-                  <!-- Tombol Aksi -->
-                  <div class="flex justify-end gap-2">
-                    <button
-                      type="button"
-                      onclick="toggleModal()"
-                      class="px-4 py-2 rounded bg-gray-300 text-dark hover:bg-gray-400"
-                    >
-                      Batal
-                    </button>
+                  <!-- Footer Modal -->
+                  <div class="flex items-center justify-between mt-6">
                     <button
                       type="submit"
-                      class="px-4 py-2 rounded bg-accent text-white hover:bg-primary"
+                      class="text-light flex gap-1 items-center bg-primary hover:bg-accent font-sm rounded-lg text-sm px-5 py-2.5 text-center"
                     >
-                      Simpan
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                      Kategori
                     </button>
+
+                    <div class="flex justify-center items-center gap-2">
+                      <button
+                        type="button"
+                        onclick="toggleModal()"
+                        class="px-4 py-2 rounded-lg bg-gray-300 text-dark hover:bg-gray-400 transition duration-300 ease-in-out"
+                      >
+                        Batal
+                      </button>
+                      <button
+                        type="submit"
+                        class="px-4 py-2 rounded-lg bg-accent text-white hover:bg-primary transition duration-300 ease-in-out"
+                      >
+                        Simpan
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>
             </div>
 
             <!-- Dropdown-Profile -->
-            <details class="relative">
-              <summary
-                class="cursor-pointer flex h-8 w-8 items-center justify-center rounded-full bg-primary-soft hover:bg-accent"
+            <div class="relative">
+              <button
+                type="button"
+                class="flex cursor-pointer h-8 w-8 items-center justify-center rounded-full text-sm bg-primary-soft hover:bg-accent transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark"
+                aria-expanded="false"
+                data-dropdown-toggle="dropdown-user"
               >
+                <span class="sr-only">Open user menu</span>
                 <i class="fa fa-user text-light text-md" aria-hidden="true"></i>
-              </summary>
+              </button>
+
+              <!-- Dropdown Body -->
               <div
-                class="absolute right-0 mt-2 w-48 rounded-md bg-primary shadow-lg py-1"
+                id="dropdown-user"
+                class="absolute right-2 mt-2 w-48 hidden z-50 bg-primary rounded-lg shadow-lg"
               >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-light hover:bg-accent"
-                  >Profile</a
+                <div class="px-4 py-3 text-sm text-light" role="none">
+                  <p class="font-medium" role="none">Neil Sims</p>
+                  <p role="none">neil.sims@gmail.com</p>
+                </div>
+                <ul
+                  class="text-dark text-sm shadow-lg py-1 rounded-b-lg bg-light"
+                  role="none"
                 >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-light hover:bg-accent"
-                  >Settings</a
-                >
-                <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-light hover:bg-accent"
-                  >Sign Out</a
-                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-primary hover:text-light"
+                      role="menuitem"
+                      >Ubah Password</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-primary hover:text-light"
+                      role="menuitem"
+                      >Logout</a
+                    >
+                  </li>
+                </ul>
               </div>
-            </details>
+            </div>
+          </div>
+          <div
+            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium space-y-1 lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="Dashboard.html"
+                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
+                  aria-current="page"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Laporan.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Laporan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="riwayat_transaksi.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Riwayat</a
+                >
+              </li>
+              <li>
+                <a
+                  href="anggaran.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Anggaran</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-
-      <!-- Mobile menu -->
-      <div
-        class="sm:hidden peer-checked:block hidden px-2 pt-2 pb-3 space-y-1"
-        id="mobile-menu"
-        s
-      >
-        <a
-          href="./Dashboard.html"
-          class="block rounded-md bg-accent px-3 py-2 text-light font-medium"
-          aria-current="page"
-          >Beranda</a
-        >
-        <a
-          href="./Laporan.html"
-          class="block rounded-md px-3 py-2 font-medium text-light bg-primary-soft hover:bg-accent"
-          >Laporan</a
-        >
-        <a
-          href="./riwayat_transaksi.html"
-          class="block rounded-md px-3 py-2 font-medium text-light bg-primary-soft hover:bg-accent"
-          >Riwayat</a
-        >
-        <a
-          href="./anggaran.html"
-          class="block rounded-md px-3 py-2 font-medium text-light bg-primary-soft hover:bg-accent"
-          >Anggaran</a
-        >
-      </div>
-    </nav>
+      </nav>
+    </header>
     <!-- Navbar -->
 
     <!-- Home -->
-    <div class="p-6">
-      <!-- Container -->
-      <div
-        class="w-full bg-light shadow-md rounded-2xl p-6 mb-6 items-center justify-center"
-      ></div>
-    </div>
+    <div class="p-6"></div>
+    <!-- Home -->
 
     <!-- Footer -->
     <footer

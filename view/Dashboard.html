@@ -47,68 +47,39 @@
   </head>
   <body class="bg-base font-display">
     <!-- Navbar -->
-    <nav class="bg-primary-dark m-4 rounded-2xl sm:rounded-full shadow-dark">
-      <input id="menu-toggle" type="checkbox" class="peer hidden" />
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between w-full">
-          <!-- Hamburger Button (Mobile) -->
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <label
-              for="menu-toggle"
-              class="inline-flex h-8 w-8 items-center justify-center rounded-md p-2 text-accent bg-primary-soft hover:bg-accent hover:text-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-light cursor-pointer"
+    <header>
+      <nav
+        class="bg-primary-dark px-4 lg:px-6 py-2.5 m-4 rounded-2xl sm:rounded-full shadow-lg"
+      >
+        <div
+          class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto"
+        >
+          <!-- Menu mobile  -->
+          <button
+            data-collapse-toggle="mobile-menu-2"
+            type="button"
+            class="lg:hidden inline-flex h-8 w-8 items-center justify-center rounded-md p-2 text-accent bg-primary-soft hover:bg-accent hover:text-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-light cursor-pointer"
+            aria-controls="mobile-menu-2"
+            aria-expanded="false"
+          >
+            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+          </button>
+
+          <!-- logo -->
+          <a href="#" class="flex items-center">
+            <img
+              src="../assets/images/logo-SVG.svg"
+              class="h-6 mr-3 sm:h-9"
+              alt="Flowbite Logo"
+            />
+            <span
+              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              >ArthaPlan</span
             >
-              <i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i>
-              <!-- <i class="fa-solid fa-xmark fa-lg"></i> -->
-            </label>
-          </div>
-
-          <!-- Logo -->
-          <div
-            class="flex items-center justify-center w-full sm:justify-start sm:w-auto"
-          >
-            <a href="./Dashboard.html">
-              <img
-                src="../assets/images/logo-SVG.svg"
-                alt="Logo"
-                class="h-10 w-auto sm:h-12 bg-base rounded-full p-1"
-              />
-              <!-- <i class="fa fa-money fa-xl text-accent" aria-hidden="true"></i> -->
-            </a>
-          </div>
-
-          <!-- Desktop-Menu -->
-          <div
-            class="hidden sm:block absolute left-1/2 transform -translate-x-1/2"
-          >
-            <div class="flex space-x-4">
-              <a
-                href="./Dashboard.html"
-                class="rounded-md bg-accent px-3 py-2 text-sm lg:text-lg font-medium text-light"
-                aria-current="page"
-                >Beranda</a
-              >
-              <a
-                href="./Laporan.html"
-                class="rounded-md px-3 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
-                >Laporan</a
-              >
-              <a
-                href="./riwayat_transaksi.html"
-                class="rounded-md px-3 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
-                >Riwayat</a
-              >
-              <a
-                href="./anggaran.html"
-                class="rounded-md px-3 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
-                >Anggaran</a
-              >
-            </div>
-          </div>
+          </a>
 
           <!-- Right Buttons -->
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2"
-          >
+          <div class="flex items-center lg:order-2 gap-2">
             <!-- Tombol Modal Plus -->
             <button
               onclick="toggleModal()"
@@ -124,7 +95,7 @@
             >
               <!-- Konten Modal -->
               <div
-                class="bg-light rounded-2xl shadow-md p-2 max-w-md w-full relative"
+                class="bg-light rounded-2xl shadow-lg p-2 max-w-md w-full relative"
               >
                 <!-- Header Modal -->
                 <div
@@ -314,50 +285,59 @@
               </div>
             </div>
           </div>
+          <div
+            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium space-y-1 lg:flex-row lg:space-x-8 lg:mt-0"
+            >
+              <li>
+                <a
+                  href="Dashboard.html"
+                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
+                  aria-current="page"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="Laporan.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Laporan</a
+                >
+              </li>
+              <li>
+                <a
+                  href="riwayat_transaksi.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Riwayat</a
+                >
+              </li>
+              <li>
+                <a
+                  href="anggaran.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Anggaran</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-
-      <!-- Mobile menu -->
-      <div
-        class="sm:hidden peer-checked:block hidden px-2 pt-2 pb-3 space-y-1"
-        id="mobile-menu"
-        s
-      >
-        <a
-          href="./Dashboard.html"
-          class="block rounded-md bg-accent px-3 py-2 text-light font-medium"
-          aria-current="page"
-          >Beranda</a
-        >
-        <a
-          href="./Laporan.html"
-          class="block rounded-md px-3 py-2 font-medium text-light bg-primary-soft hover:bg-accent"
-          >Laporan</a
-        >
-        <a
-          href="./riwayat_transaksi.html"
-          class="block rounded-md px-3 py-2 font-medium text-light bg-primary-soft hover:bg-accent"
-          >Riwayat</a
-        >
-        <a
-          href="./anggaran.html"
-          class="block rounded-md px-3 py-2 font-medium text-light bg-primary-soft hover:bg-accent"
-          >Anggaran</a
-        >
-      </div>
-    </nav>
+      </nav>
+    </header>
     <!-- Navbar -->
 
     <!-- Home -->
     <div class="p-6">
       <!-- Container -->
       <div
-        class="w-full bg-light shadow-md rounded-2xl p-6 mb-6 items-center justify-center"
+        class="w-full bg-light shadow-lg rounded-2xl p-6 mb-6 items-center justify-center"
       >
         <!-- Calendar -->
         <div class="flex items-center space-x-2 mb-6">
           <div
-            class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:text-light hover:bg-accent shadow-dark"
+            class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:text-light hover:bg-accent shadow-lg"
           >
             <i class="fa fa-calendar fa-md" aria-hidden="true"></i>
           </div>
@@ -376,7 +356,7 @@
           <input
             type="date"
             id="pemilih-tanggal"
-            class="hidden mt-2 w-fit border border-gray-300 bg-gray-100 text-dark text-sm rounded-full px-4 py-2 shadow focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer"
+            class="hidden mt-2 w-fit border border-gray-300 bg-gray-100 text-dark text-sm rounded-full px-4 py-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer"
             onchange="aturTanggalTerpilih(this.value)"
           />
         </div>
@@ -385,7 +365,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           <!-- Saldo -->
           <div
-            class="flex items-center justify-between p-4 rounded-xl shadow bg-primary text-light"
+            class="flex items-center justify-between p-4 rounded-xl shadow-lg bg-primary text-light"
           >
             <div>
               <p class="text-sm lg:text-lg">Saldo</p>
@@ -452,11 +432,11 @@
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
       >
         <!-- Anggaran -->
-        <div class="rounded-2xl bg-white shadow p-6">
+        <div class="rounded-2xl bg-white shadow-lg p-6">
           <!-- Judul -->
           <div class="flex items-center mb-4 gap-2">
             <div
-              class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-dark"
+              class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
             >
               <i class="fa-solid fa-table fa-md"></i>
             </div>
@@ -501,10 +481,10 @@
         </div>
 
         <!-- Riwayat Transaksi -->
-        <div class="rounded-2xl bg-white shadow p-4">
+        <div class="rounded-2xl bg-white shadow-lg p-4">
           <div class="flex items-center mb-4 gap-2">
             <div
-              class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-dark"
+              class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
             >
               <i class="fa fa-file-lines fa-md" aria-hidden="true"></i>
             </div>
@@ -644,11 +624,11 @@
         </div>
 
         <!-- Laporan (Pie Chart) -->
-        <div class="rounded-2xl bg-white shadow p-6">
+        <div class="rounded-2xl bg-white shadow-lg p-6">
           <!-- Header Laporan -->
           <div class="flex items-center mb-4 gap-2">
             <div
-              class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-dark"
+              class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
             >
               <i class="fa fa-chart-pie fa-md"></i>
             </div>
@@ -697,12 +677,12 @@
         </div>
 
         <!-- Diagram (Bar Chart) -->
-        <div class="flex flex-col rounded-2xl bg-white shadow p-6">
+        <div class="flex flex-col rounded-2xl bg-white shadow-lg p-6">
           <!-- atas -->
           <div class="flex justify-between items-center mb-4">
             <div class="flex items-center gap-2">
               <div
-                class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-dark"
+                class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
               >
                 <i class="fa-solid fa-chart-simple fa-md"></i>
               </div>
