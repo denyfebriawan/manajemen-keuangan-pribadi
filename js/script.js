@@ -125,13 +125,7 @@ const chartConfigPie = {
   dataLabels: {
     enabled: false,
   },
-  colors: [
-    "#88cf0f", // color-accent (lime hijau cerah, untuk highlight)
-    "#A1D97E", // versi lebih soft dari accent, untuk variasi
-    "#285539", // primary hijau gelap
-    "#6C8768", // versi lembut dari primary-soft
-    "#f2f2e8", // color-base (netral terang)
-  ],
+  colors: ["#88cf0f", "#A1D97E", "#285539", "#6C8768", "#f2f2e8"],
   legend: {
     show: false,
   },
@@ -144,7 +138,7 @@ const chartPie = new ApexCharts(
 
 chartPie.render();
 
-// DiagramDonut Chart
+// DiagramDonut Chart - Anggaran
 const chartDataPersen = [60, 40]; // Total: 100
 const chartTotalPersen = chartDataPersen.reduce((a, b) => a + b, 0);
 
@@ -164,6 +158,7 @@ const chartOptionsPersen = {
   plotOptions: {
     pie: {
       donut: {
+        
         labels: {
           show: true,
           name: {
@@ -171,7 +166,7 @@ const chartOptionsPersen = {
             fontSize: "16px",
             fontWeight: 500,
             offsetY: -10,
-            color: "#333",
+            color: "#2f3c33",
             formatter: () => "Persen",
           },
           value: {
