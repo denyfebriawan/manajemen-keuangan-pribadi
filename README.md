@@ -28,15 +28,15 @@ Project Manajemen Keuangan Pribadi
 
 # input.css
 
-    -   --font-display: "Poppins", sans-serif;
+    --font-display: "Poppins", sans-serif;
 
-    -   --color-primary-dark: #2f3c33;
-    -   --color-primary-soft: #394c3e;
-    -   --color-primary: #285539;
-    -   --color-accent: #88cf0f;
-    -   --color-base: #f2f2e8;
-    -   --color-light: #fdfdfd;
-    -   --color-dark: #181818;
-    -   --color-danger: #fb2c36;
-    -   --color-warning: #f6c36d;
-    -   --color-info: #8ecae6;
+    --color-primary-dark: #2f3c33;
+    --color-primary-soft: #394c3e;
+    --color-primary: #285539;
+    --color-accent: #88cf0f;
+    --color-base: #f2f2e8;
+    --color-light: #fdfdfd;
+    --color-dark: #181818;
+    --color-danger: #fb2c36;
+    --color-warning: #f6c36d;
+    --color-info: #8ecae6;
