@@ -28,6 +28,7 @@ Project Manajemen Keuangan Pribadi
 
 # input.css
 
+    @theme {
     --font-display: "Poppins", sans-serif;
 
     --color-primary-dark: #2f3c33;
@@ -37,6 +38,7 @@ Project Manajemen Keuangan Pribadi
     --color-base: #f2f2e8;
     --color-light: #fdfdfd;
     --color-dark: #181818;
-    --color-danger: #fb2c36;
-    --color-warning: #f6c36d;
-    --color-info: #8ecae6;
+
+    --color-neutral: #6c757d;
+    --color-neutral-light: #9ca3af;
+    }
