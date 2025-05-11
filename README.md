@@ -13,20 +13,30 @@ Project Manajemen Keuangan Pribadi
     - npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
         Sesuaikan path folder input.css nya
 
-# cara update 
+# cara update
+
     - sebelum mulai ngoding
-    - git fetch 
+    - git fetch
     - git pull
-    
+
 # cara publish
+
     - setelah ngoding
     - git add .
     - git commit -m "[desc]"
     - git push
 
+# input.css
 
+    -   --font-display: "Poppins", sans-serif;
 
-
-
-
-
+    -   --color-primary-dark: #2f3c33;
+    -   --color-primary-soft: #394c3e;
+    -   --color-primary: #285539;
+    -   --color-accent: #88cf0f;
+    -   --color-base: #f2f2e8;
+    -   --color-light: #fdfdfd;
+    -   --color-dark: #181818;
+    -   --color-danger: #fb2c36;
+    -   --color-warning: #f6c36d;
+    -   --color-info: #8ecae6;
