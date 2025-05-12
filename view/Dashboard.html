@@ -49,7 +49,7 @@
     <!-- Navbar -->
     <header>
       <nav
-        class="bg-primary-dark px-4 lg:px-6 py-2.5 m-4 rounded-2xl sm:rounded-full shadow-lg"
+        class="sticky bg-primary-dark px-4 lg:px-6 py-2.5 m-4 @max-[1020px]:rounded-full rounded-2xl shadow-lg"
       >
         <div
           class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto"
@@ -328,10 +328,10 @@
     </header>
     <!-- Navbar -->
 
-    <!-- Home -->
+    <!-- Content -->
     <div class="p-6">
-      <!-- Container -->
-      <div
+      <!-- card 1 -->
+      <section
         class="w-full bg-light shadow-lg rounded-2xl p-6 mb-6 items-center justify-center"
       >
         <!-- Calendar -->
@@ -425,14 +425,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- Card Section -->
       <div
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
       >
         <!-- Anggaran -->
-        <div class="rounded-2xl bg-white shadow-lg p-6">
+        <section class="rounded-2xl bg-white shadow-lg p-6">
           <!-- Judul -->
           <div class="flex items-center mb-4 gap-2">
             <div
@@ -478,10 +478,10 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- Riwayat Transaksi -->
-        <div class="rounded-2xl bg-white shadow-lg p-4">
+        <section class="rounded-2xl bg-white shadow-lg p-4">
           <div class="flex items-center mb-4 gap-2">
             <div
               class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
@@ -621,10 +621,10 @@
               </tbody>
             </table>
           </div>
-        </div>
+        </section>
 
         <!-- Laporan (Pie Chart) -->
-        <div class="rounded-2xl bg-white shadow-lg p-6">
+        <section class="rounded-2xl bg-white shadow-lg p-6">
           <!-- Header Laporan -->
           <div class="flex items-center mb-4 gap-2">
             <div
@@ -674,10 +674,10 @@
               </ul>
             </div>
           </div>
-        </div>
+        </section>
 
         <!-- Diagram (Bar Chart) -->
-        <div class="flex flex-col rounded-2xl bg-white shadow-lg p-6">
+        <section class="flex flex-col rounded-2xl bg-white shadow-lg p-6">
           <!-- atas -->
           <div class="flex justify-between items-center mb-4">
             <div class="flex items-center gap-2">
@@ -743,7 +743,7 @@
               <div id="bar-chart" class="w-full"></div>
             </div>
           </div>
-        </div>
+        </section>
         <!-- end diagram card  -->
       </div>
     </div>
