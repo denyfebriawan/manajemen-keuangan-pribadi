@@ -8,7 +8,7 @@ Project Manajemen Keuangan Pribadi
 # Install Tailwind
 
     - npm install tailwindcss @tailwindcss/cli
-    - buat file input.css
+    - buat file src/input.css
         copy @import "tailwindcss";
     - npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
         Sesuaikan path folder input.css nya
@@ -42,3 +42,13 @@ Project Manajemen Keuangan Pribadi
     --color-neutral: #6c757d;
     --color-neutral-light: #9ca3af;
     }
+
+# install flowbite
+    npm install flowbite
+    paste di src/input.css
+        @import "flowbite/src/themes/default";
+        @plugin "flowbite/plugin";
+        @source "../node_modules/flowbite";
+    paste di html <head>
+        <!-- Script flowbite -->
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
