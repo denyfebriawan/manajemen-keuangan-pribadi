@@ -54,4 +54,4 @@ Project Manajemen Keuangan Pribadi
         <!-- Script flowbite -->
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
-cek cek
+cek 1
