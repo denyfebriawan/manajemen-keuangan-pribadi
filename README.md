@@ -52,4 +52,8 @@ Project Manajemen Keuangan Pribadi
         @source "../node_modules/flowbite";
     paste di html <head>
         <!-- Script flowbite -->
+<<<<<<< HEAD
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+=======
+        <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+>>>>>>> 88fdbea439565ca09d4bb355bb78387d29a900a1
