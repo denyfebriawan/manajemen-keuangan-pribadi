@@ -26,7 +26,7 @@ Project Manajemen Keuangan Pribadi
     git commit -m "[desc]"
     git push
 
-# input.css
+# Color Custome
 
     @theme {
     --font-display: "Poppins", sans-serif;
