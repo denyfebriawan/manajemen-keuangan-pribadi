@@ -45,7 +45,7 @@
     <!-- script custom -->
     <script src="../js/script.js" defer></script>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col bg-base font-display">
     <!-- Navbar -->
     <header>
       <nav
@@ -73,7 +73,7 @@
               alt="Flowbite Logo"
             />
             <span
-              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              class="self-center text-xl font-semibold lightspace-nowrap dark:text-light"
               >ArthaPlan</span
             >
           </a>
@@ -229,7 +229,7 @@
                       </button>
                       <button
                         type="submit"
-                        class="px-4 py-2 rounded-lg bg-accent text-white hover:bg-primary transition duration-300 ease-in-out"
+                        class="px-4 py-2 rounded-lg bg-accent text-light hover:bg-primary transition duration-300 ease-in-out"
                       >
                         Simpan
                       </button>
@@ -295,7 +295,7 @@
               <li>
                 <a
                   href="Dashboard.html"
-                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
                   aria-current="page"
                   >Beranda</a
                 >
@@ -310,7 +310,7 @@
               <li>
                 <a
                   href="riwayat_transaksi.html"
-                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
                   >Riwayat</a
                 >
               </li>
@@ -328,63 +328,59 @@
     </header>
     <!-- Navbar -->
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg m-4">
-      <table
-        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
-      >
-        <thead
-          class="text-xs text-gray-700 uppercase bg-green-100 dark:bg-gray-700 dark:text-gray-400"
+    <!-- Table Section -->
+    <section class="flex-1 p-6">
+      <div class="relative overflow-x-auto shadow-md rounded-2xl">
+        <table class="w-full text-sm text-left">
+          <thead
+            class="text-sm font-medium text-primary-dark uppercase bg-accent"
+          >
+            <tr>
+              <th class="px-6 py-3">Nama</th>
+              <th class="px-6 py-3">Metode Transaksi</th>
+              <th class="px-6 py-3">Tanggal</th>
+              <th class="px-6 py-3">Jumlah</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-light border-b hover:bg-gray-50">
+              <td class="px-6 py-4 font-medium text-dark">Bima Sakti</td>
+              <td class="px-6 py-4">Credit Card</td>
+              <td class="px-6 py-4">01-02-2025</td>
+              <td class="px-6 py-4 text-green-600">+ Rp 1.000.000</td>
+            </tr>
+            <tr class="bg-light border-b hover:bg-gray-50">
+              <td class="px-6 py-4 font-medium text-dark">Figma</td>
+              <td class="px-6 py-4">Credit Card</td>
+              <td class="px-6 py-4">01-01-2025</td>
+              <td class="px-6 py-4 text-red-600">- Rp 750.000</td>
+            </tr>
+            <tr class="bg-light border-b hover:bg-gray-50">
+              <td class="px-6 py-4 font-medium text-dark">Netflix</td>
+              <td class="px-6 py-4">Credit Card</td>
+              <td class="px-6 py-4">01-03-2025</td>
+              <td class="px-6 py-4 text-red-600">- Rp 250.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="pt-4 pb-2 text-center text-sm lg:text-md font-medium text-light bg-primary-dark"
+    >
+      <p>&copy; 2025 Money Manager. All rights reserved.</p>
+      <p class="mt-1">
+        Designed by
+        <a
+          href="#"
+          class="text-accent hover:font-medium hover:bg-accent hover:text-primary rounded-2xl px-2 transition duration-300 ease-in-out"
+          >Pemrograman Web Team</a
         >
-          <tr>
-            <th scope="col" class="px-6 py-3">Nama</th>
-            <th scope="col" class="px-6 py-3">Metode Transaksi</th>
-            <th scope="col" class="px-6 py-3">Tanggal</th>
-            <th scope="col" class="px-6 py-3">Jumlah</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-          >
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Bima Sakti
-            </th>
-            <td class="px-6 py-4">Credit Card</td>
-            <td class="px-6 py-4">01-02-2025</td>
-            <td class="px-6 py-4 text-green-600">+ Rp 1..000.000</td>
-          </tr>
-          <tr
-            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-          >
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Figma
-            </th>
-            <td class="px-6 py-4">Credit Card</td>
-            <td class="px-6 py-4">01-01-2025</td>
-            <td class="px-6 py-4 text-red-600">- Rp 750.000</td>
-          </tr>
-          <tr
-            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
-          >
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Netflix
-            </th>
-            <td class="px-6 py-4">Credit Card</td>
-            <td class="px-6 py-4">01-03-2025</td>
-            <td class="px-6 py-4 text-red-600">- Rp 250.000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+      </p>
+    </footer>
+    <!-- footer -->
 
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>

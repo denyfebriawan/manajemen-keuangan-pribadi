@@ -46,7 +46,7 @@
     <!-- script custom -->
     <script src="../js/script.js" defer></script>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col bg-base font-display">
     <!-- Navbar -->
     <header>
       <nav
@@ -296,7 +296,7 @@
               <li>
                 <a
                   href="Dashboard.html"
-                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
                   aria-current="page"
                   >Beranda</a
                 >
@@ -318,7 +318,7 @@
               <li>
                 <a
                   href="anggaran.html"
-                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
                   >Anggaran</a
                 >
               </li>
@@ -349,7 +349,7 @@
           <p class="">Rp 500.000</p>
           <p class="">Rp 1.000.000</p>
         </div>
-        <div class="grid grid-cols-3 text-center text-3xl pt-15 font-bold">
+        <div class="grid grid-cols-3 text-center text-md pt-15 font-bold">
           <p class="">Total Anggaran</p>
           <p class="">Total Pengeluaran</p>
           <p class="">Sisa Anggaran</p>
@@ -409,6 +409,21 @@
       </div>
     </div>
 
+    <!-- Footer -->
+    <footer
+      class="pt-4 pb-2 text-center text-sm lg:text-md font-medium text-light bg-primary-dark"
+    >
+      <p>&copy; 2025 Money Manager. All rights reserved.</p>
+      <p class="mt-1">
+        Designed by
+        <a
+          href="#"
+          class="text-accent hover:font-medium hover:bg-accent hover:text-primary rounded-2xl px-2 transition duration-300 ease-in-out"
+          >Pemrograman Web Team</a
+        >
+      </p>
+    </footer>
+    <!-- footer -->
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
   </body>
 </html>
