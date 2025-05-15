@@ -7,24 +7,22 @@ Project Manajemen Keuangan Pribadi
 
 # Install Tailwind
 
-    - npm install tailwindcss @tailwindcss/cli
-    buat file src/input.css
-        copy @import "tailwindcss";
-    - npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+    npm install tailwindcss @tailwindcss/cli
+        buat file src/input.css
+            copy @import "tailwindcss";
+    npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
         Sesuaikan path folder input.css nya
 
-# cara update
+# cara update - sebelum mulai ngoding
 
-    sebelum mulai ngoding
     - git fetch
     - git pull
 
-# cara publish
+# cara publish - setelah ngoding
 
-    setelah ngoding
-    - git add .
-    - git commit -m "[desc]"
-    - git push
+    git add .
+    git commit -m "[desc]"
+    git push
 
 # input.css
 
@@ -53,5 +51,3 @@ Project Manajemen Keuangan Pribadi
     paste di html <head>
         <!-- Script flowbite -->
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
-
-cek cek
