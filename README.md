@@ -2,7 +2,7 @@ Project Manajemen Keuangan Pribadi
 
 # Cara clone repository
 
-    git remote set-url origin https://github.com/denyfebriawan/manajemen-keuangan-pribadi.git
+    git remote set-url origin           https://github.com/denyfebriawan/manajemen-keuangan-pribadi.git
     git pull origin main
 
 # Install Tailwind
@@ -53,3 +53,5 @@ Project Manajemen Keuangan Pribadi
     paste di html <head>
         <!-- Script flowbite -->
         <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+cek cek
