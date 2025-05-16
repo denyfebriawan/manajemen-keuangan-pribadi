@@ -80,29 +80,28 @@
           </a>
 
           <!-- Right Buttons -->
-          <div class="flex items-center lg:order-2 gap-2">
+          <div class="flex items-center gap-2 lg:order-2">
             <!-- Tombol Modal Plus -->
             <button
               onclick="toggleModal()"
-              class="cursor-pointer relative flex items-center justify-center h-8 w-8 bg-accent text-md rounded-full focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark hover:bg-primary-soft transition duration-300 ease-in-out"
+              class="relative flex items-center justify-center w-8 h-8 text-md text-light bg-accent rounded-full cursor-pointer hover:bg-primary-soft focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark transition duration-300 ease-in-out"
             >
-              <i class="fa fa-plus fa-md text-light" aria-hidden="true"></i>
+              <i class="fa fa-plus fa-md" aria-hidden="true"></i>
             </button>
 
-            <!-- Modal -->
+            <!-- Modal Transaksi Baru -->
             <div
               id="modal"
-              class="fixed inset-0 z-50 bg-dark/50 flex items-center justify-center hidden"
+              class="fixed inset-0 z-50 flex items-center justify-center hidden bg-dark/50"
             >
-              <!-- Konten Modal -->
               <div
-                class="bg-light rounded-2xl shadow-lg p-2 max-w-md w-full relative"
+                class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg"
               >
                 <!-- Header Modal -->
                 <div
-                  class="flex items-center justify-between p-4 md:p-5 border-b rounded-t"
+                  class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
                 >
-                  <h3 class="text-lg font-semibold text-primary">
+                  <h3 class="text-lg font-semibold text-primary-dark">
                     Transaksi Baru
                   </h3>
                   <button
@@ -115,27 +114,26 @@
 
                 <!-- Body Modal -->
                 <form class="p-4 md:p-6">
-                  <div class="grid gap-4 mb-4 grid-cols-1 sm:grid-cols-2">
+                  <div class="grid grid-cols-1 gap-4 mb-4 sm:grid-cols-2">
                     <!-- Kategori -->
-                    <div class="col-span-2 sm:col-span-1">
+                    <div class="sm:col-span-1">
                       <label
                         for="category"
                         class="block mb-2 text-sm font-medium text-dark"
                         >Kategori</label
                       >
-                      <select
-                        id="category"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full p-2.5"
-                      >
-                        <option selected>Pilih Kategori</option>
-                        <option value="mkn">Makanan</option>
-                        <option value="mnm">Minuman</option>
-                        <option value="lndy">Laundry</option>
-                      </select>
+                      <input
+                        type="text"
+                        id="Kategori"
+                        name="Kategori"
+                        placeholder="Makanan"
+                        required
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+                      />
                     </div>
 
                     <!-- Jenis Transaksi -->
-                    <div class="col-span-2 sm:col-span-1">
+                    <div class="sm:col-span-1">
                       <label
                         for="jenis-transaksi"
                         class="block mb-2 text-sm font-medium text-dark"
@@ -143,7 +141,7 @@
                       >
                       <select
                         id="jenis-transaksi"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accering-accent block w-full p-2.5"
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
                       >
                         <option selected>Pilih Jenis</option>
                         <option value="In">Pemasukan</option>
@@ -151,8 +149,8 @@
                       </select>
                     </div>
 
-                    <!-- Harga -->
-                    <div class="col-span-2 sm:col-span-1">
+                    <!-- Nominal -->
+                    <div class="sm:col-span-1">
                       <label
                         for="price"
                         class="block mb-2 text-sm font-medium text-dark"
@@ -160,16 +158,16 @@
                       >
                       <input
                         type="number"
-                        name="price"
                         id="price"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full p-2.5"
+                        name="price"
                         placeholder="100.000"
                         required
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
                       />
                     </div>
 
                     <!-- Tanggal -->
-                    <div class="col-span-2 sm:col-span-1">
+                    <div class="sm:col-span-1">
                       <label
                         for="datepicker-autohide"
                         class="block mb-2 text-sm font-medium text-dark"
@@ -183,11 +181,11 @@
                         </div>
                         <input
                           id="datepicker-autohide"
+                          type="text"
+                          placeholder="Select date"
                           datepicker
                           datepicker-autohide
-                          type="text"
-                          class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full pl-10 p-2.5 resize-none"
-                          placeholder="Select date"
+                          class="block w-full pl-10 p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
                         />
                       </div>
                     </div>
@@ -200,51 +198,43 @@
                         >Keterangan</label
                       >
                       <textarea
-                        name="keterangan"
                         id="keterangan"
+                        name="keterangan"
                         rows="3"
-                        class="bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent block w-full p-2.5 resize-none"
-                        placeholder="Keterangan"
                         required
+                        placeholder="Keterangan"
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent resize-none"
                       ></textarea>
                     </div>
                   </div>
 
                   <!-- Footer Modal -->
-                  <div class="flex items-center justify-between mt-6">
+                  <div class="flex items-center justify-end mt-6 gap-2">
+                    <!-- Tombol Aksi -->
+                    <button
+                      type="button"
+                      onclick="toggleModal()"
+                      class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+                    >
+                      Batal
+                    </button>
                     <button
                       type="submit"
-                      class="text-light flex gap-1 items-center bg-primary hover:bg-accent font-sm rounded-lg text-sm px-5 py-2.5 text-center"
+                      class="px-4 py-2 text-white bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
                     >
-                      <i class="fa fa-plus" aria-hidden="true"></i>
-                      Kategori
+                      Simpan
                     </button>
-
-                    <div class="flex justify-center items-center gap-2">
-                      <button
-                        type="button"
-                        onclick="toggleModal()"
-                        class="px-4 py-2 rounded-lg bg-gray-300 text-dark hover:bg-gray-400 transition duration-300 ease-in-out"
-                      >
-                        Batal
-                      </button>
-                      <button
-                        type="submit"
-                        class="px-4 py-2 rounded-lg bg-accent text-white hover:bg-primary transition duration-300 ease-in-out"
-                      >
-                        Simpan
-                      </button>
-                    </div>
                   </div>
                 </form>
               </div>
             </div>
+            <!-- End Modal Transaksi -->
 
-            <!-- Dropdown-Profile -->
+            <!-- Dropdown Profile -->
             <div class="relative">
               <button
                 type="button"
-                class="flex cursor-pointer h-8 w-8 items-center justify-center rounded-full text-sm bg-primary-soft hover:bg-accent transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark"
+                class="flex items-center justify-center w-8 h-8 text-sm bg-primary-soft rounded-full hover:bg-accent focus:outline-none focus:ring-2 focus:ring-light focus:ring-offset-2 focus:ring-offset-primary-dark transition duration-300 ease-in-out"
                 aria-expanded="false"
                 data-dropdown-toggle="dropdown-user"
               >
@@ -252,33 +242,29 @@
                 <i class="fa fa-user text-light text-md" aria-hidden="true"></i>
               </button>
 
-              <!-- Dropdown Body -->
+              <!-- Dropdown Menu -->
               <div
                 id="dropdown-user"
-                class="absolute right-2 mt-2 w-48 hidden z-50 bg-primary rounded-lg shadow-lg"
+                class="absolute right-2 z-50 hidden w-48 mt-2 bg-primary rounded-lg shadow-lg"
               >
-                <div class="px-4 py-3 text-sm text-light" role="none">
-                  <p class="font-medium" role="none">Neil Sims</p>
-                  <p role="none">neil.sims@gmail.com</p>
+                <div class="px-4 py-3 text-sm text-light">
+                  <p class="font-medium">Neil Sims</p>
+                  <p>neil.sims@gmail.com</p>
                 </div>
                 <ul
-                  class="text-dark text-sm shadow-lg py-1 rounded-b-lg bg-light"
-                  role="none"
+                  class="py-1 text-sm text-dark bg-light rounded-b-lg shadow-lg"
                 >
                   <li>
                     <a
                       href="#"
                       class="block px-4 py-2 hover:bg-primary hover:text-light"
-                      role="menuitem"
                       >Ubah Password</a
                     >
                   </li>
-
                   <li>
                     <a
                       href="Landing.html"
                       class="block px-4 py-2 hover:bg-primary hover:text-light"
-                      role="menuitem"
                       >Logout</a
                     >
                   </li>

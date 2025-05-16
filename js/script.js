@@ -193,5 +193,6 @@ const donutChartPersen = new ApexCharts(
   chartOptionsPersen
 );
 donutChartPersen.render();
+
 // JS - Dashboard ----------------------------------------------------------|
 
