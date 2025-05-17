@@ -215,7 +215,7 @@ const optionsLinePemasukkan = {
   series: [{ name: "Pemasukkan", data: dataPemasukkan }],
   xaxis: { categories: tanggalPemasukkan, title: { text: "Tanggal" } },
   yaxis: { title: { text: "Rupiah (Rp)" } },
-  colors: ["#10B981"],
+  colors: ["#88cf0f"],
 };
 
 const chartLinePemasukkan = new ApexCharts(
@@ -224,70 +224,34 @@ const chartLinePemasukkan = new ApexCharts(
 );
 chartLinePemasukkan.render();
 
+// Chart pie
 const optionsPiePemasukkan = {
   chart: { type: "pie", height: 300 },
   labels: ["Gaji", "Bonus", "Hasil Jual", "Lainnya"],
   series: [50000, 15000, 5000, 3000],
-  colors: ["#16A34A", "#22C55E", "#4ADE80", "#86EFAC"],
-  legend: {
-    show: false,
-  },
+  colors: ["#88cf0f", "#A1D97E", "#6C8768", "#2f3c33"],
+  legend: { show: false },
 };
 
-// Progress dari Pie Chart
-const totalPiePemasukan = optionsPiePemasukkan.series.reduce(
-  (a, b) => a + b,
-  0
-);
-const progressContainerPemasukan = document.getElementById(
-  "progress-list-pemasukkan"
-);
-
-const iconsPemasukan = {
-  Gaji: "💼",
-  Bonus: "🎁",
-  "Hasil Jual": "🛒",
-  Lainnya: "📦",
-};
-
-optionsPiePemasukkan.labels.forEach((label, i) => {
-  const value = optionsPiePemasukkan.series[i];
-  const percent = ((value / totalPiePemasukan) * 100).toFixed(1);
-  const color = optionsPiePemasukkan.colors[i];
-  const icon = iconsPemasukan[label] || "💰";
-
-  const item = document.createElement("div");
-  item.innerHTML = `
-        <div class="flex justify-between items-center mb-1">
-          <div class="flex items-center space-x-2">
-            <span class="text-lg">${icon}</span>
-            <span class="text-sm font-medium text-gray-700">${
-              i + 1
-            } ${label}</span>
-          </div>
-          <div class="text-sm font-semibold text-gray-700">Rp${value.toLocaleString(
-            "id-ID"
-          )}</div>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full h-2">
-          <div class="h-2 rounded-full" style="width: ${percent}%; background-color: ${color};"></div>
-        </div>
-      `;
-  progressContainerPemasukan.appendChild(item);
-});
+// Tampilkan pie chart
 const chartPiePemasukkan = new ApexCharts(
   document.querySelector("#pieChartPemasukkan"),
   optionsPiePemasukkan
 );
 chartPiePemasukkan.render();
-// Menghitung total pemasukkan
-const totalPemasukkan = dataPemasukkan.reduce((acc, val) => acc + val, 0);
-// Menampilkan total ke elemen HTML
+
+// (Opsional) Hitung total pemasukan untuk ditampilkan
+const totalPiePemasukan = optionsPiePemasukkan.series.reduce(
+  (a, b) => a + b,
+  0
+);
 document.getElementById(
   "totalPemasukkan"
-).innerText = `Total Pemasukkan: Rp ${totalPemasukkan.toLocaleString("id-ID")}`;
+).innerText = `Total Pemasukkan: Rp ${totalPiePemasukan.toLocaleString(
+  "id-ID"
+)}`;
 
-// data Pengeluaran
+// data Pengeluaran -----------------------------------
 const tanggalPengeluaran = ["23", "24", "25", "26", "27", "28", "29", "30"];
 const dataPengeluaran = [0, 0, 0, 0, 0, 8000, 1000, 2000];
 
@@ -305,68 +269,33 @@ const chartLinePengeluaran = new ApexCharts(
 );
 chartLinePengeluaran.render();
 
+// Chart pie -----
 const optionsPiePengeluaran = {
   chart: { type: "pie", height: 300 },
   labels: ["Makan", "Laundry", "Sayuran", "Lainnya"],
   series: [47000, 11000, 11000, 8000],
-  colors: ["#3B82F6", "#F97316", "#10B981", "#EAB308"],
-  legend: {
-    show: false,
-  },
+  colors: ["#ef4444", "#f87171", "#b91c1c", "#991b1b"],
+  legend: { show: false },
 };
 
-const totalPiePengeluaran = optionsPiePengeluaran.series.reduce(
-  (a, b) => a + b,
-  0
-);
-const progressContainerPengeluaran = document.getElementById(
-  "progress-list-pengeluaran"
-);
-
-const iconsPengeluaran = {
-  Makan: "🍛",
-  Laundry: "🧼",
-  Sayuran: "🥬",
-  Lainnya: "📦",
-};
-
-optionsPiePengeluaran.labels.forEach((label, i) => {
-  const value = optionsPiePengeluaran.series[i];
-  const percent = ((value / totalPiePengeluaran) * 100).toFixed(1);
-  const color = optionsPiePengeluaran.colors[i];
-  const icon = iconsPengeluaran[label] || "💰";
-
-  const item = document.createElement("div");
-  item.innerHTML = `
-        <div class="flex justify-between items-center mb-1">
-          <div class="flex items-center space-x-2">
-            <span class="text-lg">${icon}</span>
-            <span class="text-sm font-medium text-gray-700">${
-              i + 1
-            } ${label}</span>
-          </div>
-          <div class="text-sm font-semibold text-gray-700">Rp${value.toLocaleString(
-            "id-ID"
-          )}</div>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full h-2">
-          <div class="h-2 rounded-full" style="width: ${percent}%; background-color: ${color};"></div>
-        </div>
-      `;
-  progressContainerPengeluaran.appendChild(item);
-});
-
+// Tampilkan pie chart
 const chartPiePengeluaran = new ApexCharts(
   document.querySelector("#pieChartPengeluaran"),
   optionsPiePengeluaran
 );
 chartPiePengeluaran.render();
-// Menghitung total pengeluaran
-const total = dataPengeluaran.reduce((acc, val) => acc + val, 0);
 
-// Menampilkan total ke elemen HTML
+// Total pengeluaran (gunakan langsung dari series jika tidak ada array `dataPengeluaran`)
+const totalPengeluaran = optionsPiePengeluaran.series.reduce(
+  (acc, val) => acc + val,
+  0
+);
+
+// Tampilkan total
 document.getElementById(
   "totalPengeluaran"
-).innerText = `Total Pengeluaran: Rp ${total.toLocaleString("id-ID")}`;
+).innerText = `Total Pengeluaran: Rp ${totalPengeluaran.toLocaleString(
+  "id-ID"
+)}`;
 
 // JS - Laporan ----------------------------------------------------|

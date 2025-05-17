@@ -63,7 +63,7 @@
             <img
               src="../assets/images/logo-SVG.svg"
               class="h-6 mr-3 sm:h-9"
-              alt="Flowbite Logo"
+              alt="Logo ArthaPlan"
             />
             <span
               class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
@@ -84,7 +84,7 @@
             <!-- Modal Transaksi Baru -->
             <div
               id="modal"
-              class="fixed inset-0 z-50 flex items-center justify-center hidden bg-dark/50"
+              class="fixed inset-0 z-[9999] flex items-center justify-center hidden bg-dark/50"
             >
               <div
                 class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg"
@@ -116,8 +116,8 @@
                       >
                       <input
                         type="text"
-                        id="Kategori"
-                        name="Kategori"
+                        id="kategori"
+                        name="kategori"
                         placeholder="Makanan"
                         required
                         class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
@@ -314,10 +314,10 @@
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
       >
         <!-- Laporan Pemasukan -->
-        <!-- Judul, total,dan line chart -->
+        <!-- line chart -->
         <section class="rounded-2xl bg-white shadow-lg p-6">
           <h2
-            class="text-xl p-4 font-bold text-center text-white bg-primary uppercase rounded-2xl shadow-md mb-4"
+            class="text-xl p-4 font-bold text-center text-white bg-primary uppercase rounded-lg shadow-lg mb-4"
           >
             laporan Pemasukkan
           </h2>
@@ -325,69 +325,251 @@
           <div class="bg-base rounded-2xl shadow-lg">
             <div
               id="totalPemasukkan"
-              class="text-center uppercase font-bold text-primary-dark bg-accent p-2 rounded-2xl"
+              class="text-center uppercase font-bold text-primary-dark bg-accent p-2 rounded-t-lg"
             ></div>
-            <div id="lineChartPemasukkan" class="bg-base p-4 rounded-2xl"></div>
+            <div id="lineChartPemasukkan" class="bg-base p-4 rounded-lg"></div>
           </div>
         </section>
-        <!-- end Judul, total,dan line chart -->
+        <!-- end line chart -->
 
-        <!-- kategori dan piechart-->
+        <!-- piechart-->
         <section class="rounded-2xl bg-white shadow-lg p-4">
           <div class="w-full md:w-1/2">
-            <h2
-              class="text-center font-bold text-primary-dark mb-2 bg-accent uppercase rounded-2xl p-2 shadow-md"
-            >
-              Peringkat Kategori
-            </h2>
-            <div id="pieChartPemasukkan" class="w-full h-64"></div>
-          </div>
-          <div class="w-full md:w-1/2">
+            <div class="w-full md:w-1/2 gap-2">
+              <h2
+                class="mb-4 text-center font-bold text-primary-dark bg-accent uppercase rounded-lg py-2 shadow-lg"
+              >
+                Rincian Kategori Pemasukan
+              </h2>
+              <!-- Pie chart -->
+              <div id="pieChartPemasukkan"></div>
+            </div>
+
+            <!-- Legenda -->
             <div
-              id="progress-list-pemasukkan"
-              class="bg-base p-2 rounded-2xl shadow-md space-y-4"
-            ></div>
+              class="flex justify-between items-center mt-4 text-sm md:text-lg w-full bg-base rounded-xl p-4 h-full"
+            >
+              <ul class="flex flex-col gap-y-4 w-full">
+                <!-- Gaji -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Gaji</span>
+                    </div>
+                    <p>Rp 50.000</p>
+                  </div>
+                  <div class="w-full bg-gray-300 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-accent"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </li>
+
+                <!-- Bonus -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Bonus</span>
+                    </div>
+                    <p>Rp 15.000</p>
+                  </div>
+                  <div class="w-full bg-gray-300 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-accent"
+                      style="width: 15%"
+                    ></div>
+                  </div>
+                </li>
+
+                <!-- Hasil Jual -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Hasil Jual</span>
+                    </div>
+                    <p>Rp 5.000</p>
+                  </div>
+                  <div class="w-full bg-gray-300 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-accent"
+                      style="width: 5%"
+                    ></div>
+                  </div>
+                </li>
+
+                <!-- Lainnya -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Lainnya</span>
+                    </div>
+                    <p>Rp 3.000</p>
+                  </div>
+                  <div class="w-full bg-gray-300 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-accent"
+                      style="width: 3%"
+                    ></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
-        <!-- Laporan Pengeluaran -->
 
-        <!-- Judul, total,dan line chart -->
+        <!-- Laporan Pengeluaran -->
+        <!-- line chart -->
         <section class="rounded-2xl bg-white shadow-lg p-6">
           <h2
-            class="text-xl p-4 font-bold text-center text-white bg-primary rounded-2xl shadow-md uppercase mb-4"
+            class="text-xl p-4 font-bold text-center text-white bg-danger-dark rounded-lg shadow-lg uppercase mb-4"
           >
             laporan pengeluaran
           </h2>
-          <div class="bg-base rounded-2xl shadow-lg">
+          <div class="bg-base rounded-lg shadow-lg">
             <div
               id="totalPengeluaran"
-              class="text-center uppercase font-bold text-primary-dark mb-2 bg-accent p-2 rounded-2xl"
+              class="text-center uppercase font-bold text-light bg-danger mb-2 p-2 rounded-t-lg"
             ></div>
-            <div
-              id="lineChartPengeluaran"
-              class="bg-base p-4 rounded-2xl"
-            ></div>
+            <div id="lineChartPengeluaran" class="bg-base p-4 rounded-lg"></div>
           </div>
         </section>
-        <!-- end Judul, total,dan line chart -->
+        <!-- end line chart -->
 
-        <!-- kategori dan piechart-->
-        <section class="flex flex-col rounded-2xl bg-white shadow-lg p-6">
+        <!-- piechart-->
+        <section class="rounded-2xl bg-white shadow-lg p-4">
           <div class="w-full md:w-1/2">
-            <h2
-              class="text-center font-bold text-primary-dark mb-2 bg-accent uppercase rounded-2xl p-2 shadow-md"
-            >
-              Peringkat Kategori
-            </h2>
-            <div id="pieChartPengeluaran" class="w-full h-64"></div>
-          </div>
-          <div class="w-full md:w-1/2">
+            <div class="w-full md:w-1/2">
+              <h2
+                class="mb-4 text-center font-bold text-light bg-danger uppercase rounded-lg py-2 shadow-lg"
+              >
+                Rincian Kategori Pengeluaran
+              </h2>
+              <!-- Pie chart -->
+              <div id="pieChartPengeluaran"></div>
+            </div>
+
+            <!-- Legenda -->
             <div
-              id="progress-list-pengeluaran"
-              class="bg-base p-2 rounded-2xl shadow-md space-y-4"
-            ></div>
+              class="flex justify-between items-center mt-4 text-sm md:text-lg w-full bg-base rounded-xl p-4 h-full"
+            >
+              <ul class="flex flex-col gap-y-4 w-full">
+                <!-- Makan -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Makan</span>
+                    </div>
+                    <p>Rp47.000</p>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-danger"
+                      style="width: 61.8%"
+                    ></div>
+                  </div>
+                </li>
+
+                <!-- Laundry -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Laundry</span>
+                    </div>
+                    <p>Rp11.000</p>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-danger"
+                      style="width: 14.5%"
+                    ></div>
+                  </div>
+                </li>
+
+                <!-- Sayuran -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Sayuran</span>
+                    </div>
+                    <p>Rp11.000</p>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-danger"
+                      style="width: 14.5%"
+                    ></div>
+                  </div>
+                </li>
+
+                <!-- Lainnya -->
+                <li>
+                  <div
+                    class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                  >
+                    <div class="flex items-center gap-2">
+                      <i
+                        class="fa fa-money fa-lg text-accent"
+                        aria-hidden="true"
+                      ></i>
+                      <span>Lainnya</span>
+                    </div>
+                    <p>Rp8.000</p>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div
+                      class="h-2 rounded-full bg-danger"
+                      style="width: 10.5%"
+                    ></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
+
         <!-- end Laporan Pengeluaran -->
       </div>
     </div>
