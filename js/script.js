@@ -226,7 +226,7 @@ chartLinePemasukkan.render();
 
 // Chart pie Pemasukkan
 const optionsPiePemasukkan = {
-  chart: { type: "pie", height: 300 },
+  chart: { type: "pie", height: 200 },
   labels: ["Gaji", "Bonus", "Hasil Jual", "Lainnya"],
   series: [50000, 15000, 5000, 3000],
   colors: ["#88cf0f", "#A1D97E", "#6C8768", "#2f3c33"],
@@ -247,9 +247,7 @@ const totalPiePemasukan = optionsPiePemasukkan.series.reduce(
 );
 document.getElementById(
   "totalPemasukkan"
-).innerText = `Total Pemasukkan: Rp ${totalPiePemasukan.toLocaleString(
-  "id-ID"
-)}`;
+).innerText = `Rp ${totalPiePemasukan.toLocaleString("id-ID")}`;
 
 // line chart Pengeluaran -----------------------------------
 const tanggalPengeluaran = ["23", "24", "25", "26", "27", "28", "29", "30"];
@@ -271,7 +269,7 @@ chartLinePengeluaran.render();
 
 // Chart pie pengeluaran
 const optionsPiePengeluaran = {
-  chart: { type: "pie", height: 300 },
+  chart: { type: "pie", height: 200 },
   labels: ["Makan", "Laundry", "Sayuran", "Lainnya"],
   series: [47000, 11000, 11000, 8000],
   colors: ["#ef4444", "#f87171", "#b91c1c", "#991b1b"],
@@ -294,8 +292,6 @@ const totalPengeluaran = optionsPiePengeluaran.series.reduce(
 // Tampilkan total
 document.getElementById(
   "totalPengeluaran"
-).innerText = `Total Pengeluaran: Rp ${totalPengeluaran.toLocaleString(
-  "id-ID"
-)}`;
+).innerText = `Rp ${totalPengeluaran.toLocaleString("id-ID")}`;
 
 // JS - Laporan ----------------------------------------------------|
