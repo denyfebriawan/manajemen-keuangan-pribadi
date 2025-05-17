@@ -12,10 +12,17 @@
     <link href="../src/output.css" rel="stylesheet" />
 
     <!-- icon logo -->
-    <link rel="shortcut icon" href="../assets/images/logo-SVG.svg" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/logo-SVG.svg"
+      type="image/x-icon"
+    />
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/cc43265ffa.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/cc43265ffa.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Script Diagram -->
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
@@ -23,7 +30,10 @@
     <!-- Script flowbite -->
     <script src="../node_modules/flowbite/dist/flowbite.min.js"></script>
 
-    <link href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css" rel="stylesheet" />
+    <link
+      href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
 
     <!-- script custom -->
     <script src="../js/script.js" defer></script>
@@ -31,8 +41,12 @@
   <body class="bg-base font-display">
     <!-- Navbar -->
     <header>
-      <nav class="sticky bg-primary-dark px-4 lg:px-6 py-2.5 m-4 @max-[1020px]:rounded-full rounded-2xl shadow-lg">
-        <div class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto">
+      <nav
+        class="sticky bg-primary-dark px-4 lg:px-6 py-2.5 m-4 @max-[1020px]:rounded-full rounded-2xl shadow-lg"
+      >
+        <div
+          class="flex flex-wrap items-center justify-between max-w-screen-xl mx-auto"
+        >
           <!-- Menu mobile  -->
           <button
             data-collapse-toggle="mobile-menu-2"
@@ -46,8 +60,15 @@
 
           <!-- logo -->
           <a href="#" class="flex items-center">
-            <img src="../assets/images/logo-SVG.svg" class="h-6 mr-3 sm:h-9" alt="Logo ArthaPlan" />
-            <span class="self-center text-xl font-semibold text-light space-nowrap">ArthaPlan</span>
+            <img
+              src="../assets/images/logo-SVG.svg"
+              class="h-6 mr-3 sm:h-9"
+              alt="Logo ArthaPlan"
+            />
+            <span
+              class="self-center text-xl font-semibold text-light space-nowrap"
+              >ArthaPlan</span
+            >
           </a>
 
           <!-- Right Buttons -->
@@ -61,12 +82,24 @@
             </button>
 
             <!-- Modal Transaksi Baru -->
-            <div id="modal" class="fixed inset-0 z-[9999] flex items-center justify-center hidden bg-dark/50">
-              <div class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg">
+            <div
+              id="modal"
+              class="fixed inset-0 z-[9999] flex items-center justify-center hidden bg-dark/50"
+            >
+              <div
+                class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg"
+              >
                 <!-- Header Modal -->
-                <div class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5">
-                  <h3 class="text-lg font-semibold text-primary-dark">Transaksi Baru</h3>
-                  <button onclick="toggleModal()" class="text-dark hover:text-primary">
+                <div
+                  class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
+                >
+                  <h3 class="text-lg font-semibold text-primary-dark">
+                    Transaksi Baru
+                  </h3>
+                  <button
+                    onclick="toggleModal()"
+                    class="text-dark hover:text-primary"
+                  >
                     <i class="fas fa-xmark"></i>
                   </button>
                 </div>
@@ -76,14 +109,32 @@
                   <div class="grid grid-cols-1 gap-4 mb-4 sm:grid-cols-2">
                     <!-- Kategori -->
                     <div class="sm:col-span-1">
-                      <label for="category" class="block mb-2 text-sm font-medium text-dark">Kategori</label>
-                      <input type="text" id="kategori" name="kategori" placeholder="Makanan" required class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent" />
+                      <label
+                        for="category"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Kategori</label
+                      >
+                      <input
+                        type="text"
+                        id="kategori"
+                        name="kategori"
+                        placeholder="Makanan"
+                        required
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+                      />
                     </div>
 
                     <!-- Jenis Transaksi -->
                     <div class="sm:col-span-1">
-                      <label for="jenis-transaksi" class="block mb-2 text-sm font-medium text-dark">Jenis Transaksi</label>
-                      <select id="jenis-transaksi" class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent">
+                      <label
+                        for="jenis-transaksi"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Jenis Transaksi</label
+                      >
+                      <select
+                        id="jenis-transaksi"
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+                      >
                         <option selected>Pilih Jenis</option>
                         <option value="In">Pemasukan</option>
                         <option value="Out">Pengeluaran</option>
@@ -92,15 +143,32 @@
 
                     <!-- Nominal -->
                     <div class="sm:col-span-1">
-                      <label for="price" class="block mb-2 text-sm font-medium text-dark">Nominal</label>
-                      <input type="number" id="price" name="price" placeholder="100.000" required class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent" />
+                      <label
+                        for="price"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Nominal</label
+                      >
+                      <input
+                        type="number"
+                        id="price"
+                        name="price"
+                        placeholder="100.000"
+                        required
+                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+                      />
                     </div>
 
                     <!-- Tanggal -->
                     <div class="sm:col-span-1">
-                      <label for="datepicker-autohide" class="block mb-2 text-sm font-medium text-dark">Tanggal</label>
+                      <label
+                        for="datepicker-autohide"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Tanggal</label
+                      >
                       <div class="relative w-full">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <div
+                          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                        >
                           <i class="fa fa-calendar" aria-hidden="true"></i>
                         </div>
                         <input
@@ -116,7 +184,11 @@
 
                     <!-- Keterangan -->
                     <div class="col-span-2">
-                      <label for="keterangan" class="block mb-2 text-sm font-medium text-dark">Keterangan</label>
+                      <label
+                        for="keterangan"
+                        class="block mb-2 text-sm font-medium text-dark"
+                        >Keterangan</label
+                      >
                       <textarea
                         id="keterangan"
                         name="keterangan"
@@ -131,8 +203,19 @@
                   <!-- Footer Modal -->
                   <div class="flex items-center justify-end mt-6 gap-2">
                     <!-- Tombol Aksi -->
-                    <button type="button" onclick="toggleModal()" class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out">Batal</button>
-                    <button type="submit" class="px-4 py-2 text-text-light bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out">Simpan</button>
+                    <button
+                      type="button"
+                      onclick="toggleModal()"
+                      class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+                    >
+                      Batal
+                    </button>
+                    <button
+                      type="submit"
+                      class="px-4 py-2 text-text-light bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
+                    >
+                      Simpan
+                    </button>
                   </div>
                 </form>
               </div>
@@ -152,36 +235,71 @@
               </button>
 
               <!-- Dropdown Menu -->
-              <div id="dropdown-user" class="absolute right-2 z-50 hidden w-48 mt-2 bg-primary rounded-lg shadow-lg">
+              <div
+                id="dropdown-user"
+                class="absolute right-2 z-50 hidden w-48 mt-2 bg-primary rounded-lg shadow-lg"
+              >
                 <div class="px-4 py-3 text-sm text-light">
                   <p class="font-medium">Neil Sims</p>
                   <p>neil.sims@gmail.com</p>
                 </div>
-                <ul class="py-1 text-sm text-dark bg-light rounded-b-lg shadow-lg">
+                <ul
+                  class="py-1 text-sm text-dark bg-light rounded-b-lg shadow-lg"
+                >
                   <li>
-                    <a href="#" class="block px-4 py-2 hover:bg-primary hover:text-light">Ubah Password</a>
+                    <a
+                      href="#"
+                      class="block px-4 py-2 hover:bg-primary hover:text-light"
+                      >Ubah Password</a
+                    >
                   </li>
                   <li>
-                    <a href="Landing.html" class="block px-4 py-2 hover:bg-primary hover:text-light">Logout</a>
+                    <a
+                      href="Landing.html"
+                      class="block px-4 py-2 hover:bg-primary hover:text-light"
+                      >Logout</a
+                    >
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-            <ul class="flex flex-col mt-4 font-medium space-y-1 lg:flex-row lg:space-x-8 lg:mt-0">
+          <div
+            class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              class="flex flex-col mt-4 font-medium space-y-1 lg:flex-row lg:space-x-8 lg:mt-0"
+            >
               <li>
-                <a href="Dashboard.html" class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light">Beranda</a>
+                <a
+                  href="Dashboard.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Beranda</a
+                >
               </li>
               <li>
-                <a class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light" aria-current="page" href="Laporan.html">Laporan</a>
+                <a
+                  class="block py-2 pl-3 pr-4 rounded-md bg-accent text-sm lg:text-lg font-medium text-light"
+                  aria-current="page"
+                  href="Laporan.html"
+                  >Laporan</a
+                >
               </li>
               <li>
-                <a href="riwayat_transaksi.html" class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light">Riwayat</a>
+                <a
+                  href="riwayat_transaksi.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Riwayat</a
+                >
               </li>
               <li>
-                <a href="anggaran.html" class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light">Anggaran</a>
+                <a
+                  href="anggaran.html"
+                  class="block rounded-md pl-3 pr-4 py-2 text-sm lg:text-lg font-medium text-light bg-primary-soft hover:bg-accent hover:text-light"
+                  >Anggaran</a
+                >
               </li>
             </ul>
           </div>
@@ -192,23 +310,36 @@
 
     <!-- Content -->
     <div class="p-6 flex-1">
-      <div class="flex flex-col gap-4 justify-between items-center w-full overflow-hidden">
+      <div
+        class="flex flex-col gap-4 justify-between items-center w-full overflow-hidden"
+      >
         <!-- Item 1 -->
         <div class="flex justify-between items-center w-full">
-          <h2 class="text-xl p-4 font-bold text-center text-light bg-primary uppercase rounded-lg shadow-lg w-full">laporan Pemasukkan</h2>
+          <h2
+            class="text-xl p-4 font-bold text-center text-light bg-primary uppercase rounded-lg shadow-lg w-full"
+          >
+            laporan Pemasukkan
+          </h2>
         </div>
-        <div class="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2">
+        <div
+          class="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
+        >
           <!-- Laporan -->
 
           <!-- line chart Pemasukan -->
           <section class="rounded-2xl bg-light shadow-lg p-4 w-full">
             <div class="w-full md:w-1/2 gap-2">
-              <div class="flex-row md:flex justify-center items-center gap-2 mb-4 text-center font-medium text-dark bg-accent uppercase rounded-lg p-2 shadow-lg">
+              <div
+                class="flex-row md:flex justify-center items-center gap-2 mb-4 text-center font-medium text-dark bg-accent uppercase rounded-lg p-2 shadow-lg"
+              >
                 <p>total Pemasukkan</p>
 
                 <h2 id="totalPemasukkan" class="font-bold"></h2>
               </div>
-              <div id="lineChartPemasukkan" class="bg-base p-4 rounded-lg"></div>
+              <div
+                id="lineChartPemasukkan"
+                class="bg-base p-4 rounded-lg"
+              ></div>
             </div>
           </section>
           <!-- line chart -->
@@ -217,67 +348,105 @@
           <section class="rounded-2xl bg-light shadow-lg p-4">
             <div class="w-full md:w-1/2">
               <div class="w-full md:w-1/2 gap-2">
-                <h2 class="mb-4 text-center font-bold text-primary-dark bg-accent uppercase rounded-lg p-2 shadow-lg">Rincian Kategori Pemasukan</h2>
+                <h2
+                  class="mb-4 text-center font-bold text-primary-dark bg-accent uppercase rounded-lg p-2 shadow-lg"
+                >
+                  Rincian Kategori Pemasukan
+                </h2>
                 <!-- Pie chart -->
                 <div id="pieChartPemasukkan"></div>
               </div>
 
               <!-- Legenda -->
-              <div class="flex justify-between items-center mt-4 text-sm md:text-lg w-full bg-base rounded-xl p-4 h-full">
+              <div
+                class="flex justify-between items-center mt-4 text-sm md:text-lg w-full bg-base rounded-xl p-4 h-full"
+              >
                 <ul class="flex flex-col gap-y-4 w-full">
                   <!-- Gaji -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-briefcase text-accent" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-briefcase text-accent"
+                          aria-hidden="true"
+                        ></i>
                         <span>Gaji</span>
                       </div>
                       <p>Rp 50.000</p>
                     </div>
                     <div class="w-full bg-gray-300 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-accent" style="width: 50%"></div>
+                      <div
+                        class="h-2 rounded-full bg-accent"
+                        style="width: 50%"
+                      ></div>
                     </div>
                   </li>
 
                   <!-- Bonus -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-gift text-accent" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-gift text-accent"
+                          aria-hidden="true"
+                        ></i>
                         <span>Bonus</span>
                       </div>
                       <p>Rp 15.000</p>
                     </div>
                     <div class="w-full bg-gray-300 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-accent" style="width: 15%"></div>
+                      <div
+                        class="h-2 rounded-full bg-accent"
+                        style="width: 15%"
+                      ></div>
                     </div>
                   </li>
 
                   <!-- Hasil Jual -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-sack-dollar text-accent" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-sack-dollar text-accent"
+                          aria-hidden="true"
+                        ></i>
                         <span>Hasil Jual</span>
                       </div>
                       <p>Rp 5.000</p>
                     </div>
                     <div class="w-full bg-gray-300 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-accent" style="width: 5%"></div>
+                      <div
+                        class="h-2 rounded-full bg-accent"
+                        style="width: 5%"
+                      ></div>
                     </div>
                   </li>
 
                   <!-- Lainnya -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-cart-plus text-accent" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-cart-plus text-accent"
+                          aria-hidden="true"
+                        ></i>
                         <span>Lainnya</span>
                       </div>
                       <p>Rp 3.000</p>
                     </div>
                     <div class="w-full bg-gray-300 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-accent" style="width: 3%"></div>
+                      <div
+                        class="h-2 rounded-full bg-accent"
+                        style="width: 3%"
+                      ></div>
                     </div>
                   </li>
                 </ul>
@@ -288,21 +457,32 @@
 
         <!-- Item 4 -->
         <div class="sm:flex justify-between items-center gap-4 w-full">
-          <h2 class="text-xl p-4 font-bold text-center text-light bg-danger-dark rounded-lg shadow-lg uppercase w-full">laporan pengeluaran</h2>
+          <h2
+            class="text-xl p-4 font-bold text-center text-light bg-danger-dark rounded-lg shadow-lg uppercase w-full"
+          >
+            laporan pengeluaran
+          </h2>
         </div>
 
         <!-- Item 5 & 6 -->
-        <div class="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2">
+        <div
+          class="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
+        >
           <!-- line chart Pengeluaran -->
           <section class="rounded-2xl bg-light shadow-lg p-6">
             <div class="w-full md:w-1/2 gap-2">
-              <div class="flex-row md:flex justify-center items-center gap-2 mb-4 text-center font-medium text-light bg-danger uppercase rounded-lg p-2 shadow-lg">
+              <div
+                class="flex-row md:flex justify-center items-center gap-2 mb-4 text-center font-medium text-light bg-danger uppercase rounded-lg p-2 shadow-lg"
+              >
                 <p>total pengeluaran:</p>
 
                 <h2 id="totalPengeluaran" class="font-bold"></h2>
               </div>
 
-              <div id="lineChartPengeluaran" class="bg-base p-4 rounded-lg"></div>
+              <div
+                id="lineChartPengeluaran"
+                class="bg-base p-4 rounded-lg"
+              ></div>
             </div>
           </section>
           <!-- end line chart -->
@@ -311,67 +491,105 @@
           <section class="rounded-2xl bg-light shadow-lg p-4">
             <div class="w-full md:w-1/2">
               <div class="w-full md:w-1/2">
-                <h2 class="mb-4 text-center font-bold text-light bg-danger uppercase rounded-lg p-2 shadow-lg">Rincian Kategori Pengeluaran</h2>
+                <h2
+                  class="mb-4 text-center font-bold text-light bg-danger uppercase rounded-lg p-2 shadow-lg"
+                >
+                  Rincian Kategori Pengeluaran
+                </h2>
                 <!-- Pie chart -->
                 <div id="pieChartPengeluaran"></div>
               </div>
 
               <!-- Legenda -->
-              <div class="flex justify-between items-center mt-4 text-sm md:text-lg w-full bg-base rounded-xl p-4 h-full">
+              <div
+                class="flex justify-between items-center mt-4 text-sm md:text-lg w-full bg-base rounded-xl p-4 h-full"
+              >
                 <ul class="flex flex-col gap-y-4 w-full">
                   <!-- Makan -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-utensils text-danger" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-utensils text-danger"
+                          aria-hidden="true"
+                        ></i>
                         <span>Makan</span>
                       </div>
                       <p>Rp47.000</p>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-danger" style="width: 61.8%"></div>
+                      <div
+                        class="h-2 rounded-full bg-danger"
+                        style="width: 61.8%"
+                      ></div>
                     </div>
                   </li>
 
                   <!-- Laundry -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-jug-detergent text-danger" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-jug-detergent text-danger"
+                          aria-hidden="true"
+                        ></i>
                         <span>Laundry</span>
                       </div>
                       <p>Rp11.000</p>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-danger" style="width: 14.5%"></div>
+                      <div
+                        class="h-2 rounded-full bg-danger"
+                        style="width: 14.5%"
+                      ></div>
                     </div>
                   </li>
 
                   <!-- Sayuran -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-carrot text-danger" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-carrot text-danger"
+                          aria-hidden="true"
+                        ></i>
                         <span>Sayuran</span>
                       </div>
                       <p>Rp11.000</p>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-danger" style="width: 14.5%"></div>
+                      <div
+                        class="h-2 rounded-full bg-danger"
+                        style="width: 14.5%"
+                      ></div>
                     </div>
                   </li>
 
                   <!-- Lainnya -->
                   <li>
-                    <div class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1">
+                    <div
+                      class="flex justify-between items-center w-full text-sm font-semibold text-dark mb-1"
+                    >
                       <div class="flex items-center gap-2">
-                        <i class="fa fa-lg fa-cart-plus text-danger" aria-hidden="true"></i>
+                        <i
+                          class="fa fa-lg fa-cart-plus text-danger"
+                          aria-hidden="true"
+                        ></i>
                         <span>Lainnya</span>
                       </div>
                       <p>Rp8.000</p>
                     </div>
                     <div class="w-full bg-gray-200 rounded-full h-2">
-                      <div class="h-2 rounded-full bg-danger" style="width: 10.5%"></div>
+                      <div
+                        class="h-2 rounded-full bg-danger"
+                        style="width: 10.5%"
+                      ></div>
                     </div>
                   </li>
                 </ul>
@@ -382,14 +600,20 @@
         </div>
       </div>
     </div>
-    <!-- Home -->
+    <!-- Content -->
 
     <!-- Footer -->
-    <footer class="pt-4 pb-2 text-center text-sm lg:text-md font-medium text-light bg-primary-dark">
+    <footer
+      class="pt-4 pb-2 text-center text-sm lg:text-md font-medium text-light bg-primary-dark"
+    >
       <p>&copy; 2025 Money Manager. All rights reserved.</p>
       <p class="mt-1">
         Designed by
-        <a href="#" class="text-accent hover:font-medium hover:bg-accent hover:text-primary rounded-2xl px-2 transition duration-300 ease-in-out">Pemrograman Web Team</a>
+        <a
+          href="#"
+          class="text-accent hover:font-medium hover:bg-accent hover:text-primary rounded-2xl px-2 transition duration-300 ease-in-out"
+          >Pemrograman Web Team</a
+        >
       </p>
     </footer>
     <!-- footer -->
