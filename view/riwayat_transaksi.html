@@ -317,42 +317,137 @@
 
     <!-- Table Section -->
     <section class="flex-1 p-6">
-      <div class="shadow-lg overflow-hidden rounded-2xl">
-        <table class="w-full text-sm text-left">
+      <div class="overflow-x-auto rounded-lg">
+        <table class="min-w-full text-sm lg:text-md text-left text-gray-700">
           <thead
-            class="text-sm font-medium text-primary-dark uppercase bg-accent"
+            class="text-sm lg:text-md text-primary-dark uppercase bg-accent"
           >
             <tr>
-              <th class="px-6 py-3">Nama</th>
-              <th class="px-6 py-3">Metode Transaksi</th>
-              <th class="px-6 py-3">Tanggal</th>
-              <th class="px-6 py-3">Jumlah</th>
+              <th class="px-4 py-3">No.</th>
+              <th class="px-4 py-3">Kategori</th>
+              <th class="px-4 py-3">Keterangan</th>
+              <th class="px-4 py-3">Tanggal</th>
+              <th class="px-4 py-3">Nominal</th>
+              <th class="px-4 py-3">Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr class="bg-light border-b hover:bg-gray-50">
-              <td class="px-6 py-4 font-medium text-dark">Bima Sakti</td>
-              <td class="px-6 py-4">Credit Card</td>
-              <td class="px-6 py-4">01-02-2025</td>
-              <td class="px-6 py-4 text-green-600">+ Rp 1.000.000</td>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <!-- Row 1 -->
+            <tr>
+              <td class="px-4 py-4">01</td>
+              <td class="px-4 py-4">
+                <div
+                  class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full"
+                >
+                  <i class="fa fa-money"></i>
+                </div>
+              </td>
+              <td class="px-4 py-4">Uang Saku</td>
+              <td class="px-4 py-4">05/05/2025</td>
+              <td class="px-4 py-4">
+                <div
+                  class="flex justify-center items-center gap-1 text-sm lg:text-lg"
+                >
+                  <span class="text-sm lg:text-lg text-accent">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                  </span>
+                  <p>Rp50.000</p>
+                </div>
+              </td>
+              <td class="flex gap-2 px-4 py-4">
+                <a
+                  href="#"
+                  class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
+                >
+                  <i class="fa fa-edit"></i>
+                </a>
+                <a
+                  href="#"
+                  class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
+                >
+                  <i class="fa fa-trash"></i>
+                </a>
+              </td>
             </tr>
-            <tr class="bg-light border-b hover:bg-gray-50">
-              <td class="px-6 py-4 font-medium text-dark">Figma</td>
-              <td class="px-6 py-4">Credit Card</td>
-              <td class="px-6 py-4">01-01-2025</td>
-              <td class="px-6 py-4 text-red-600">- Rp 750.000</td>
+            <!-- Row 2 -->
+            <tr>
+              <td class="px-4 py-4">02</td>
+              <td class="px-4 py-4">
+                <div
+                  class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full"
+                >
+                  <i class="fa fa-soap"></i>
+                </div>
+              </td>
+              <td class="px-4 py-4">Laundry</td>
+              <td class="px-4 py-4">05/05/2025</td>
+              <td class="px-4 py-4">
+                <div
+                  class="flex justify-center items-center gap-1 text-sm lg:text-lg"
+                >
+                  <span class="text-sm lg:text-lg text-danger">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                  </span>
+                  <p>Rp10.000</p>
+                </div>
+              </td>
+              <td class="flex gap-2 px-4 py-4">
+                <a
+                  href="#"
+                  class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
+                >
+                  <i class="fa fa-edit"></i>
+                </a>
+                <a
+                  href="#"
+                  class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
+                >
+                  <i class="fa fa-trash"></i>
+                </a>
+              </td>
             </tr>
-            <tr class="bg-light border-b hover:bg-gray-50">
-              <td class="px-6 py-4 font-medium text-dark">Netflix</td>
-              <td class="px-6 py-4">Credit Card</td>
-              <td class="px-6 py-4">01-03-2025</td>
-              <td class="px-6 py-4 text-red-600">- Rp 250.000</td>
+            <!-- Row 3 -->
+            <tr>
+              <td class="px-4 py-4">03</td>
+              <td class="px-4 py-4">
+                <div
+                  class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full"
+                >
+                  <i class="fa fa-gas-pump"></i>
+                </div>
+              </td>
+              <td class="px-4 py-4">Bensin</td>
+              <td class="px-4 py-4">05/05/2025</td>
+              <td class="px-4 py-4">
+                <div
+                  class="flex justify-center items-center gap-1 text-sm lg:text-lg"
+                >
+                  <span class="text-sm lg:text-lg text-danger">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                  </span>
+                  <p>Rp10.000</p>
+                </div>
+              </td>
+              <td class="flex gap-2 px-4 py-4">
+                <a
+                  href="#"
+                  class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
+                >
+                  <i class="fa fa-edit"></i>
+                </a>
+                <a
+                  href="#"
+                  class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
+                >
+                  <i class="fa fa-trash"></i>
+                </a>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
-
+    <!-- End Table Section -->
     <!-- Footer -->
     <footer
       class="pt-4 pb-2 text-center text-sm lg:text-md font-medium text-light bg-primary-dark"
