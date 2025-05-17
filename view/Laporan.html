@@ -272,6 +272,7 @@
               </div>
             </div>
           </div>
+
           <div
             class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
             id="mobile-menu-2"
@@ -315,85 +316,91 @@
     </header>
     <!-- Navbar -->
 
-    <!-- Content -->
+    <!-- Laporan keuangan -->
     <div class="p-6 mb-6">
-      <!-- Card Section -->
       <div
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
       >
-        <!-- Anggaran -->
+        <!-- Laporan Pemasukan -->
+        <!-- Judul, total,dan line chart -->
         <section class="rounded-2xl bg-white shadow-lg p-6">
-          <!-- Judul -->
           <h2
-            class="text-xl p-4 font-bold text-center text-white bg-green-500 rounded-lg shadow-lg uppercase mb-4"
+            class="text-xl p-4 font-bold text-center text-white bg-primary uppercase rounded-2xl shadow-md mb-4"
           >
             laporan Pemasukkan
           </h2>
-
           <!-- Chart Pemasukkan -->
-          <div class="bg-light rounded-lg shadow-lg">
+          <div class="bg-base rounded-2xl shadow-lg">
             <div
               id="totalPemasukkan"
-              class="p-2 font-bold text-primary text-center bg-green-300 shadow-md mb-2 rounded-t-lg"
+              class="text-center uppercase font-bold text-primary-dark bg-accent p-2 rounded-2xl"
             ></div>
-            <div
-              id="lineChartPemasukkan"
-              class="bg-white p-4 rounded-b-lg"
-            ></div>
+            <div id="lineChartPemasukkan" class="bg-base p-4 rounded-2xl"></div>
           </div>
         </section>
+        <!-- end Judul, total,dan line chart -->
 
-        <!-- Riwayat Transaksi -->
+        <!-- kategori dan piechart-->
         <section class="rounded-2xl bg-white shadow-lg p-4">
           <div class="w-full md:w-1/2">
             <h2
-              class="text-center font-bold text-primary mb-2 bg-green-300 p-2 rounded shadow-md"
+              class="text-center font-bold text-primary-dark mb-2 bg-accent uppercase rounded-2xl p-2 shadow-md"
             >
               Peringkat Kategori
             </h2>
             <div id="pieChartPemasukkan" class="w-full h-64"></div>
           </div>
           <div class="w-full md:w-1/2">
-            <div id="progress-list-pemasukkan" class="space-y-4"></div>
+            <div
+              id="progress-list-pemasukkan"
+              class="bg-base p-2 rounded-2xl shadow-md space-y-4"
+            ></div>
           </div>
         </section>
+        <!-- end Laporan Pemasukan -->
 
-        <!-- Laporan (Pie Chart) -->
+        <!-- Laporan Pengeluaran -->
+        <!-- Judul, total,dan line chart -->
         <section class="rounded-2xl bg-white shadow-lg p-6">
           <h2
-            class="text-xl p-4 font-bold text-center text-white bg-red-500 rounded-lg shadow-lg uppercase mb-4"
+            class="text-xl p-4 font-bold text-center text-white bg-primary rounded-2xl shadow-md uppercase mb-4"
           >
             laporan pengeluaran
           </h2>
-          <div class="bg-light rounded-lg shadow-lg">
+          <div class="bg-base rounded-2xl shadow-lg">
             <div
               id="totalPengeluaran"
-              class="p-2 font-bold text-primary text-center bg-red-300 mb-2 rounded-t-lg"
+              class="text-center uppercase font-bold text-primary-dark mb-2 bg-accent p-2 rounded-2xl"
             ></div>
             <div
               id="lineChartPengeluaran"
-              class="bg-white p-4 rounded-b-lg"
+              class="bg-base p-4 rounded-2xl"
             ></div>
           </div>
         </section>
+        <!-- end Judul, total,dan line chart -->
 
-        <!-- Diagram (Bar Chart) -->
+        <!-- kategori dan piechart-->
         <section class="flex flex-col rounded-2xl bg-white shadow-lg p-6">
           <div class="w-full md:w-1/2">
             <h2
-              class="text-center font-bold text-primary mb-2 bg-red-300 p-2 rounded shadow-md"
+              class="text-center font-bold text-primary-dark mb-2 bg-accent uppercase rounded-2xl p-2 shadow-md"
             >
               Peringkat Kategori
             </h2>
             <div id="pieChartPengeluaran" class="w-full h-64"></div>
           </div>
           <div class="w-full md:w-1/2">
-            <div id="progress-list-pengeluaran" class="space-y-4"></div>
+            <div
+              id="progress-list-pengeluaran"
+              class="bg-base p-2 rounded-2xl shadow-md space-y-4"
+            ></div>
           </div>
         </section>
-        <!-- end diagram card  -->
+        <!-- end Laporan Pengeluaran -->
       </div>
     </div>
+    <!-- end laporan keuangan -->
     <!-- Home -->
 
     <!-- Footer -->
