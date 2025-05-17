@@ -196,7 +196,7 @@ donutChartPersen.render();
 // JS - Dashboard ----------------------------------------------------------|
 
 // JS - Laporan ----------------------------------------------------|
-// Pemasukan
+// line chart Pemasukan
 const tanggalPemasukkan = [
   "23",
   "24",
@@ -224,7 +224,7 @@ const chartLinePemasukkan = new ApexCharts(
 );
 chartLinePemasukkan.render();
 
-// Chart pie
+// Chart pie Pemasukkan
 const optionsPiePemasukkan = {
   chart: { type: "pie", height: 300 },
   labels: ["Gaji", "Bonus", "Hasil Jual", "Lainnya"],
@@ -251,7 +251,7 @@ document.getElementById(
   "id-ID"
 )}`;
 
-// data Pengeluaran -----------------------------------
+// line chart Pengeluaran -----------------------------------
 const tanggalPengeluaran = ["23", "24", "25", "26", "27", "28", "29", "30"];
 const dataPengeluaran = [0, 0, 0, 0, 0, 8000, 1000, 2000];
 
@@ -269,7 +269,7 @@ const chartLinePengeluaran = new ApexCharts(
 );
 chartLinePengeluaran.render();
 
-// Chart pie -----
+// Chart pie pengeluaran
 const optionsPiePengeluaran = {
   chart: { type: "pie", height: 300 },
   labels: ["Makan", "Laundry", "Sayuran", "Lainnya"],
