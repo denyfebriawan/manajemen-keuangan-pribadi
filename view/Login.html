@@ -43,14 +43,12 @@
       rel="stylesheet"
     />
 
-    <script src="../js/script.js" defer></script>
-
     <!-- Custom Styles for Toggle -->
     <style>
-      #container.active .sign-in-form {
+      #contain.active .sign-in-form {
         transform: translateX(100%);
       }
-      #container.active .sign-up-form {
+      #contain.active .sign-up-form {
         transform: translateX(100%);
         opacity: 1;
         z-index: 5;
@@ -63,7 +61,7 @@
       .sign-in-form {
         transition: all 0.6s ease-in-out;
       }
-      #container.active .toggle {
+      #contain.active .toggle {
         transform: translateX(-100%);
       }
       .toggle {
@@ -76,14 +74,14 @@
       <!-- LOGIN / REGISTER -->
       <div class="flex-grow flex items-center justify-center">
         <div
-          id="container"
+          id="contain"
           class="relative w-[768px] bg-light min-h-[500px] rounded-2xl shadow-lg overflow-hidden"
         >
           <!-- Sign Up Form -->
           <div
             class="sign-up-form absolute w-1/2 h-full top-0 left-0 flex flex-col justify-center items-center px-8 text-center bg-light"
           >
-            <form class="w-full max-w-xs" action="Login.html">
+            <form class="w-full max-w-xs" action="Login.html" method="post">
               <h2 class="text-2xl font-bold mb-4">Create Account</h2>
 
               <span class="text-sm text-netral"
@@ -92,17 +90,13 @@
               <input
                 type="text"
                 placeholder="Username"
-                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent"
+                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accent"
               />
-              <!-- <input
-                type="email"
-                placeholder="Email"
-                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent"
-              /> -->
+
               <input
                 type="password"
                 placeholder="Password"
-                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent"
+                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accent"
               />
               <button
                 class="w-full mt-5 bg-primary text-light hover:bg-accent py-2 rounded-lg uppercase text-md font-medium"
@@ -125,16 +119,22 @@
               <input
                 type="text"
                 placeholder="Username"
-                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent"
+                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accent"
               />
               <input
                 type="password"
                 placeholder="Password"
-                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accring-accent"
+                class="w-full mt-3 p-2 bg-gray-50 border border-gray-300 text-dark text-sm rounded-lg focus:ring-accent focus:border-accent"
               />
-              <a href="#" class="block text-xs text-info mt-2 text-right"
-                >Forgot Password?</a
-              >
+              <div class="w-full flex justify-end mt-2">
+                <button
+                  type="button"
+                  onclick="document.getElementById('modal-lupa-password').classList.remove('hidden')"
+                  class="text-xs text-info hover:text-blue-300 hover:underline"
+                >
+                  Ubah Password
+                </button>
+              </div>
               <button
                 class="w-full mt-5 bg-primary text-light hover:bg-accent py-2 rounded-lg uppercase text-md font-medium"
               >
@@ -161,7 +161,7 @@
                 Register with your personal details to use all of our features
               </p>
               <button
-                id="register"
+                id="regis"
                 class="border-2 bg-primary hover:bg-primary-soft py-2 px-6 rounded-lg uppercase text-sm font-medium shadow-lg"
               >
                 Sign Up
@@ -180,7 +180,7 @@
               </h2>
               <p class="text-sm mb-4">To stay connected, please login</p>
               <button
-                id="login"
+                id="log"
                 class="border-2 bg-primary hover:bg-primary-soft py-2 px-6 rounded-lg uppercase text-sm font-medium shadow-lg"
               >
                 <i class="fa fa-arrow-left mr-1" aria-hidden="true"></i>
@@ -208,25 +208,88 @@
     </footer>
     <!-- Footer -->
 
-    <!-- TOGGLE SCRIPT -->
-    <script>
-      const container = document.getElementById("container");
-      const registerBtn = document.getElementById("register");
-      const loginBtn = document.getElementById("login");
-      const toggleLeft = document.getElementById("toggle-left");
-      const toggleRight = document.getElementById("toggle-right");
+    <!-- Modal Ubah Password -->
+    <div
+      id="modal-lupa-password"
+      class="fixed inset-0 z-50 hidden bg-dark/50 flex items-center justify-center"
+    >
+      <div class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg">
+        <!-- Header Modal -->
+        <div
+          class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
+        >
+          <h3 class="text-lg font-semibold text-primary-dark">Ubah Password</h3>
+          <button
+            type="button"
+            onclick="document.getElementById('modal-lupa-password').classList.add('hidden')"
+            class="text-dark hover:text-primary"
+          >
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
 
-      registerBtn.addEventListener("click", () => {
-        container.classList.add("active");
-        toggleLeft.classList.add("hidden");
-        toggleRight.classList.remove("hidden");
-      });
+        <!-- Body Modal -->
+        <form class="p-4 md:p-6">
+          <div class="grid grid-cols-1 gap-4 mb-4">
+            <!-- Input Username -->
+            <div>
+              <label
+                for="Username"
+                class="block mb-2 text-sm font-medium text-dark"
+              >
+                Username
+              </label>
+              <input
+                type="text"
+                id="Username"
+                name="Username"
+                placeholder="Masukkan Username"
+                required
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              />
+            </div>
 
-      loginBtn.addEventListener("click", () => {
-        container.classList.remove("active");
-        toggleLeft.classList.remove("hidden");
-        toggleRight.classList.add("hidden");
-      });
-    </script>
+            <!-- Input Password -->
+            <div>
+              <label
+                for="password"
+                class="block mb-2 text-sm font-medium text-dark"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="password baru"
+                required
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              />
+            </div>
+          </div>
+
+          <!-- Footer Modal -->
+          <div class="flex items-center justify-end mt-6 gap-2">
+            <button
+              type="button"
+              onclick="document.getElementById('modal-lupa-password').classList.add('hidden')"
+              class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+            >
+              Batal
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 text-light bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Modal Passw -->
+
+    <!-- Script -->
+    <script src="../js/script.js" defer></script>
   </body>
 </html>

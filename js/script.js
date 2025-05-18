@@ -1,3 +1,27 @@
+// JS - Login ----------------------------------------------------|
+document.addEventListener("DOMContentLoaded", function () {
+  const arthaContainer = document.getElementById("contain");
+  const arthaRegisterBtn = document.getElementById("regis");
+  const arthaLoginBtn = document.getElementById("log");
+  const arthaToggleLeft = document.getElementById("toggle-left");
+  const arthaToggleRight = document.getElementById("toggle-right");
+
+  if (arthaRegisterBtn && arthaLoginBtn) {
+    arthaRegisterBtn.addEventListener("click", () => {
+      arthaContainer.classList.add("active");
+      arthaToggleLeft.classList.add("hidden");
+      arthaToggleRight.classList.remove("hidden");
+    });
+
+    arthaLoginBtn.addEventListener("click", () => {
+      arthaContainer.classList.remove("active");
+      arthaToggleLeft.classList.remove("hidden");
+      arthaToggleRight.classList.add("hidden");
+    });
+  }
+});
+// JS - Login --------------------------------------------------------------|
+
 // JS - Dashboard ----------------------------------------------------------|
 // Toggle tampilan datepicker
 function tampilkanPemilihTanggal() {
@@ -278,3 +302,4 @@ document.getElementById(
 ).innerText = `Rp ${totalPengeluaran.toLocaleString("id-ID")}`;
 
 // JS - Laporan ----------------------------------------------------|
+

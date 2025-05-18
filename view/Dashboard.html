@@ -70,10 +70,10 @@
             <img
               src="../assets/images/logo-SVG.svg"
               class="h-6 mr-3 sm:h-9"
-              alt="Flowbite Logo"
+              alt="ArthaPlan Logo"
             />
             <span
-              class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+              class="self-center text-xl font-semibold lightspace-nowrap text-light"
               >ArthaPlan</span
             >
           </a>
@@ -87,147 +87,6 @@
             >
               <i class="fa fa-plus fa-md" aria-hidden="true"></i>
             </button>
-
-            <!-- Modal Transaksi Baru -->
-            <div
-              id="modal"
-              class="fixed inset-0 z-50 flex items-center justify-center hidden bg-dark/50"
-            >
-              <div
-                class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg"
-              >
-                <!-- Header Modal -->
-                <div
-                  class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
-                >
-                  <h3 class="text-lg font-semibold text-primary-dark">
-                    Transaksi Baru
-                  </h3>
-                  <button
-                    onclick="toggleModal()"
-                    class="text-dark hover:text-primary"
-                  >
-                    <i class="fas fa-xmark"></i>
-                  </button>
-                </div>
-
-                <!-- Body Modal -->
-                <form class="p-4 md:p-6">
-                  <div class="grid grid-cols-1 gap-4 mb-4 sm:grid-cols-2">
-                    <!-- Kategori -->
-                    <div class="sm:col-span-1">
-                      <label
-                        for="category"
-                        class="block mb-2 text-sm font-medium text-dark"
-                        >Kategori</label
-                      >
-                      <input
-                        type="text"
-                        id="Kategori"
-                        name="Kategori"
-                        placeholder="Makanan"
-                        required
-                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
-                      />
-                    </div>
-
-                    <!-- Jenis Transaksi -->
-                    <div class="sm:col-span-1">
-                      <label
-                        for="jenis-transaksi"
-                        class="block mb-2 text-sm font-medium text-dark"
-                        >Jenis Transaksi</label
-                      >
-                      <select
-                        id="jenis-transaksi"
-                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
-                      >
-                        <option selected>Pilih Jenis</option>
-                        <option value="In">Pemasukan</option>
-                        <option value="Out">Pengeluaran</option>
-                      </select>
-                    </div>
-
-                    <!-- Nominal -->
-                    <div class="sm:col-span-1">
-                      <label
-                        for="price"
-                        class="block mb-2 text-sm font-medium text-dark"
-                        >Nominal</label
-                      >
-                      <input
-                        type="number"
-                        id="price"
-                        name="price"
-                        placeholder="100.000"
-                        required
-                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
-                      />
-                    </div>
-
-                    <!-- Tanggal -->
-                    <div class="sm:col-span-1">
-                      <label
-                        for="datepicker-autohide"
-                        class="block mb-2 text-sm font-medium text-dark"
-                        >Tanggal</label
-                      >
-                      <div class="relative w-full">
-                        <div
-                          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
-                        >
-                          <i class="fa fa-calendar" aria-hidden="true"></i>
-                        </div>
-                        <input
-                          id="datepicker-autohide"
-                          type="text"
-                          placeholder="Select date"
-                          datepicker
-                          datepicker-autohide
-                          class="block w-full pl-10 p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
-                        />
-                      </div>
-                    </div>
-
-                    <!-- Keterangan -->
-                    <div class="col-span-2">
-                      <label
-                        for="keterangan"
-                        class="block mb-2 text-sm font-medium text-dark"
-                        >Keterangan</label
-                      >
-                      <textarea
-                        id="keterangan"
-                        name="keterangan"
-                        rows="3"
-                        required
-                        placeholder="Keterangan"
-                        class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent resize-none"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <!-- Footer Modal -->
-                  <div class="flex items-center justify-end mt-6 gap-2">
-                    <!-- Tombol Aksi -->
-                    <button
-                      type="button"
-                      onclick="toggleModal()"
-                      class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
-                    >
-                      Batal
-                    </button>
-                    <button
-                      type="submit"
-                      class="px-4 py-2 text-white bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
-                    >
-                      Simpan
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-            <!-- End Modal Transaksi -->
 
             <!-- Dropdown Profile -->
             <div class="relative">
@@ -254,12 +113,16 @@
                   class="py-1 text-sm text-dark bg-light rounded-b-lg shadow-lg"
                 >
                   <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-primary hover:text-light"
-                      >Ubah Password</a
+                    <!-- Trigger Modal -->
+                    <button
+                      type="button"
+                      onclick="document.getElementById('modal-lupa-password').classList.remove('hidden')"
+                      class="block w-full text-left px-4 py-2 hover:bg-primary hover:text-light"
                     >
+                      Ubah Password
+                    </button>
                   </li>
+
                   <li>
                     <a
                       href="Landing.html"
@@ -362,7 +225,7 @@
               </div>
             </div>
             <div
-              class="h-10 w-10 rounded-full bg-white flex md:hidden lg:flex items-center justify-center"
+              class="h-10 w-10 rounded-full bg-light flex md:hidden lg:flex items-center justify-center"
             >
               <i class="fa fa-money-bill text-2xl text-accent"></i>
             </div>
@@ -383,7 +246,7 @@
               </div>
             </div>
             <div
-              class="h-10 w-10 rounded-full bg-white flex md:hidden lg:flex items-center justify-center"
+              class="h-10 w-10 rounded-full bg-light flex md:hidden lg:flex items-center justify-center"
             >
               <i class="fa-solid fa-heart text-xl text-accent"></i>
             </div>
@@ -404,7 +267,7 @@
               </div>
             </div>
             <div
-              class="h-10 w-10 rounded-full bg-white flex md:hidden lg:flex items-center justify-center"
+              class="h-10 w-10 rounded-full bg-light flex md:hidden lg:flex items-center justify-center"
             >
               <i
                 class="fa-solid fa-arrow-right-to-bracket text-xl text-accent"
@@ -419,7 +282,7 @@
         class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
       >
         <!-- Anggaran -->
-        <section class="rounded-2xl bg-white shadow-lg p-6">
+        <section class="rounded-2xl bg-light shadow-lg p-6">
           <!-- Judul -->
           <div class="flex items-center mb-4 gap-2">
             <div
@@ -449,18 +312,18 @@
               class="w-full lg:w-3/5 space-y-4 text-md sm:text-sm lg:text-lg"
             >
               <div class="flex justify-between items-center">
-                <p class="whitespace-nowrap">Anggaran</p>
+                <p class="lightspace-nowrap">Anggaran</p>
                 <p class="text-right">360.000</p>
               </div>
               <div class="flex justify-between items-center">
-                <p class="whitespace-nowrap">Sisa</p>
+                <p class="lightspace-nowrap">Sisa</p>
                 <div class="flex gap-1 items-center text-right">
                   <span class="text-accent text-sm">(60%)</span>
                   <p>220.000</p>
                 </div>
               </div>
               <div class="flex justify-between items-center">
-                <p class="whitespace-nowrap">Rata-rata Harian</p>
+                <p class="lightspace-nowrap">Rata-rata Harian</p>
                 <p class="text-right">10.000</p>
               </div>
             </div>
@@ -468,7 +331,7 @@
         </section>
 
         <!-- Riwayat Transaksi -->
-        <section class="rounded-2xl bg-white shadow-lg p-4">
+        <section class="rounded-2xl bg-light shadow-lg p-4">
           <div class="flex items-center mb-4 gap-2">
             <div
               class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
@@ -493,7 +356,7 @@
                   <th class="px-4 py-3">Action</th>
                 </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
+              <tbody class="bg-light divide-y divide-gray-200">
                 <!-- Row 1 -->
                 <tr>
                   <td class="px-4 py-4">01</td>
@@ -614,7 +477,7 @@
         </section>
 
         <!-- Laporan (Pie Chart) -->
-        <section class="rounded-2xl bg-white shadow-lg p-6">
+        <section class="rounded-2xl bg-light shadow-lg p-6">
           <!-- Header Laporan -->
           <div class="flex items-center mb-4 gap-2">
             <div
@@ -667,7 +530,7 @@
         </section>
 
         <!-- Diagram (Bar Chart) -->
-        <section class="flex flex-col rounded-2xl bg-white shadow-lg p-6">
+        <section class="flex flex-col rounded-2xl bg-light shadow-lg p-6">
           <!-- atas -->
           <div class="flex justify-between items-center mb-4">
             <div class="flex items-center gap-2">
@@ -754,5 +617,222 @@
       </p>
     </footer>
     <!-- footer -->
+
+    <!-- Modal Ubah Password -->
+    <div
+      id="modal-lupa-password"
+      class="fixed inset-0 z-50 hidden bg-dark/50 flex items-center justify-center"
+    >
+      <div class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg">
+        <!-- Header Modal -->
+        <div
+          class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
+        >
+          <h3 class="text-lg font-semibold text-primary-dark">Ubah Password</h3>
+          <button
+            type="button"
+            onclick="document.getElementById('modal-lupa-password').classList.add('hidden')"
+            class="text-dark hover:text-primary"
+          >
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Body Modal -->
+        <form class="p-4 md:p-6">
+          <div class="grid grid-cols-1 gap-4 mb-4">
+            <!-- Input Username -->
+            <div>
+              <label
+                for="Username"
+                class="block mb-2 text-sm font-medium text-dark"
+              >
+                Username
+              </label>
+              <input
+                type="text"
+                id="Username"
+                name="Username"
+                placeholder="Masukkan Username"
+                required
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              />
+            </div>
+
+            <!-- Input Password -->
+            <div>
+              <label
+                for="password"
+                class="block mb-2 text-sm font-medium text-dark"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="password baru"
+                required
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              />
+            </div>
+          </div>
+
+          <!-- Footer Modal -->
+          <div class="flex items-center justify-end mt-6 gap-2">
+            <button
+              type="button"
+              onclick="document.getElementById('modal-lupa-password').classList.add('hidden')"
+              class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+            >
+              Batal
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 text-light bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Modal Passw -->
+
+    <!-- Modal Transaksi Baru -->
+    <div
+      id="modal"
+      class="fixed inset-0 z-50 flex items-center justify-center hidden bg-dark/50"
+    >
+      <div class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg">
+        <!-- Header Modal -->
+        <div
+          class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
+        >
+          <h3 class="text-lg font-semibold text-primary-dark">
+            Transaksi Baru
+          </h3>
+          <button onclick="toggleModal()" class="text-dark hover:text-primary">
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Body Modal -->
+        <form class="p-4 md:p-6">
+          <div class="grid grid-cols-1 gap-4 mb-4 sm:grid-cols-2">
+            <!-- Kategori -->
+            <div class="sm:col-span-1">
+              <label
+                for="category"
+                class="block mb-2 text-sm font-medium text-dark"
+                >Kategori</label
+              >
+              <input
+                type="text"
+                id="Kategori"
+                name="Kategori"
+                placeholder="Makanan"
+                required
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              />
+            </div>
+
+            <!-- Jenis Transaksi -->
+            <div class="sm:col-span-1">
+              <label
+                for="jenis-transaksi"
+                class="block mb-2 text-sm font-medium text-dark"
+                >Jenis Transaksi</label
+              >
+              <select
+                id="jenis-transaksi"
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              >
+                <option selected>Pilih Jenis</option>
+                <option value="In">Pemasukan</option>
+                <option value="Out">Pengeluaran</option>
+              </select>
+            </div>
+
+            <!-- Nominal -->
+            <div class="sm:col-span-1">
+              <label
+                for="price"
+                class="block mb-2 text-sm font-medium text-dark"
+                >Nominal</label
+              >
+              <input
+                type="number"
+                id="price"
+                name="price"
+                placeholder="100.000"
+                required
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+              />
+            </div>
+
+            <!-- Tanggal -->
+            <div class="sm:col-span-1">
+              <label
+                for="datepicker-autohide"
+                class="block mb-2 text-sm font-medium text-dark"
+                >Tanggal</label
+              >
+              <div class="relative w-full">
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                >
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </div>
+                <input
+                  id="datepicker-autohide"
+                  type="text"
+                  placeholder="Select date"
+                  datepicker
+                  datepicker-autohide
+                  class="block w-full pl-10 p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+                />
+              </div>
+            </div>
+
+            <!-- Keterangan -->
+            <div class="col-span-2">
+              <label
+                for="keterangan"
+                class="block mb-2 text-sm font-medium text-dark"
+                >Keterangan</label
+              >
+              <textarea
+                id="keterangan"
+                name="keterangan"
+                rows="3"
+                required
+                placeholder="Keterangan"
+                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent resize-none"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Footer Modal -->
+          <div class="flex items-center justify-end mt-6 gap-2">
+            <!-- Tombol Aksi -->
+            <button
+              type="button"
+              onclick="toggleModal()"
+              class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+            >
+              Batal
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 text-light bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Modal Transaksi -->
   </body>
 </html>
