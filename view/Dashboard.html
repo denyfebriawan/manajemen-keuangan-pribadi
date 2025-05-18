@@ -381,18 +381,18 @@
                     </div>
                   </td>
                   <td class="flex gap-2 px-4 py-4">
-                    <a
-                      href="#"
+                    <button
+                      onclick="toggleModal()"
                       class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-edit"></i>
-                    </a>
-                    <a
-                      href="#"
+                    </button>
+                    <button
+                      onclick="document.getElementById('modal-delete').classList.remove('hidden')"
                       class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-trash"></i>
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <!-- Row 2 -->
@@ -419,18 +419,18 @@
                     </div>
                   </td>
                   <td class="flex gap-2 px-4 py-4">
-                    <a
-                      href="#"
+                    <button
+                      onclick="toggleModal()"
                       class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-edit"></i>
-                    </a>
-                    <a
-                      href="#"
+                    </button>
+                    <button
+                      onclick="document.getElementById('modal-delete').classList.remove('hidden')"
                       class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-trash"></i>
-                    </a>
+                    </button>
                   </td>
                 </tr>
                 <!-- Row 3 -->
@@ -457,18 +457,18 @@
                     </div>
                   </td>
                   <td class="flex gap-2 px-4 py-4">
-                    <a
-                      href="#"
+                    <button
+                      onclick="toggleModal()"
                       class="flex justify-center items-center h-8 w-8 bg-accent text-light rounded-full hover:bg-primary transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-edit"></i>
-                    </a>
-                    <a
-                      href="#"
+                    </button>
+                    <button
+                      onclick="document.getElementById('modal-delete').classList.remove('hidden')"
                       class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
                     >
                       <i class="fa fa-trash"></i>
-                    </a>
+                    </button>
                   </td>
                 </tr>
               </tbody>
@@ -697,7 +697,7 @@
         </form>
       </div>
     </div>
-    <!-- End Modal Passw -->
+    <!-- End Modal Ubah Password -->
 
     <!-- Modal Transaksi Baru -->
     <div
@@ -834,5 +834,44 @@
       </div>
     </div>
     <!-- End Modal Transaksi -->
+
+    <!-- Modal Alert Hapus -->
+    <div
+      id="modal-delete"
+      class="fixed inset-0 z-50 hidden bg-dark/50 flex items-center justify-center"
+    >
+      <div class="bg-light rounded-2xl shadow-lg max-w-sm w-full p-6">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold text-danger flex items-center gap-2">
+            <i class="fa fa-exclamation-triangle"></i>
+            Hapus Data
+          </h3>
+          <button
+            onclick="document.getElementById('modal-delete').classList.add('hidden')"
+            class="text-dark hover:text-primary"
+          >
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+        <div class="mb-6 text-dark">
+          Apakah Anda yakin ingin menghapus data ini? Tindakan ini tidak dapat
+          dibatalkan.
+        </div>
+        <div class="flex justify-end gap-2">
+          <button
+            onclick="document.getElementById('modal-delete').classList.add('hidden')"
+            class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+          >
+            Batal
+          </button>
+          <button
+            class="px-4 py-2 text-light bg-danger rounded-lg hover:bg-red-800 transition duration-300 ease-in-out"
+          >
+            Hapus
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal Alert Hapus -->
   </body>
 </html>
