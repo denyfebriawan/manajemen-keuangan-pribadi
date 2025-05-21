@@ -35,28 +35,6 @@ function toggleModal() {
   modal.classList.toggle("hidden");
 }
 
-// alert
-document.getElementById("Pass-Cek").addEventListener("submit", function (e) {
-  e.preventDefault(); // Mencegah form langsung submit
-
-  // Ambil nilai input
-  const username = document.getElementById("Username").value.trim();
-  const password = document.getElementById("password-baru").value.trim();
-  const alertBox = document.getElementById("alert-kosong");
-
-  if (username === "" || password === "") {
-    // Tampilkan alert jika ada input kosong
-    alertBox.classList.remove("hidden");
-  } else {
-    // Sembunyikan alert jika tidak ada input kosong
-    alertBox.classList.add("hidden");
-
-    // Di sini bisa tambahkan logika submit form jika perlu
-    // Misalnya: this.submit(); atau AJAX call
-    console.log("Form valid. Lanjut submit.");
-  }
-});
-
 // DiagramBar Chart - Diagram
 const chartConfig = {
   series: [
