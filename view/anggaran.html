@@ -739,13 +739,15 @@
         </div>
         <!-- Footer Modal -->
         <div class="flex items-center justify-between p-4">
+          <!-- act for delete anggaran -->
           <button
-            type="button"
-            class="text-light hover:text-red-800 px-2 py-1 bg-danger rounded-full transition duration-300 ease-in-out"
-            title="Hapus"
+            onclick="document.getElementById('modal-delete').classList.remove('hidden')"
+            class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full hover:bg-accent transition duration-300 ease-in-out"
           >
             <i class="fa fa-trash"></i>
           </button>
+
+          <!-- close button -->
           <button
             type="button"
             onclick="document.getElementById('modal-rincian-anggaran').classList.add('hidden')"
