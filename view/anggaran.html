@@ -166,83 +166,277 @@
     </header>
     <!-- Navbar -->
 
-    <div class="grid grid-cols-6 m-4">
-      <div
-        class="rounded-2xl bg-gray-100 shadow-lg p-6 col-span-2 flex justify-center mr-5"
+    <!-- content -->
+    <div class="p-6 flex-1">
+      <section
+        class="w-full bg-light shadow-lg rounded-2xl p-6 mb-6 items-center justify-center"
       >
+        <!-- Calendar -->
+        <div class="flex items-center space-x-2 mb-6">
+          <div
+            class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:text-light hover:bg-accent shadow-lg"
+          >
+            <i class="fa fa-calendar fa-md" aria-hidden="true"></i>
+          </div>
+          <!-- Display Tanggal dan Tombol -->
+          <div class="flex items-center gap-2">
+            <p id="tanggal-terpilih" class="text-md font-bold text-dark">
+              Mei 2025
+            </p>
+            <i
+              onclick="tampilkanPemilihBulan()"
+              class="fa-solid fa-chevron-down bg-accent text-light hover:bg-primary p-0.5 rounded-full cursor-pointer transition duration-300 ease-in-out"
+            ></i>
+          </div>
+          <!-- Input Bulan (disembunyikan awalnya) -->
+          <input
+            type="month"
+            id="pemilih-Bulan"
+            class="hidden mt-2 w-fit border border-gray-300 bg-gray-100 text-dark text-sm rounded-full px-4 py-2 shadow-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-300 ease-in-out cursor-pointer"
+            onchange="aturBulanTerpilih(this.value)"
+          />
+        </div>
+
+        <!-- Chart -->
         <div
-          class="w-full lg:w-2/5 flex justify-center bg-base rounded-xl py-4"
+          class="flex justify-center items-center bg-base rounded-xl py-4 mb-4"
         >
           <div
             id="donutChartPersen"
             class="relative w-full max-w-[200px]"
           ></div>
         </div>
-      </div>
 
-      <div class="rounded-2xl bg-gray-100 shadow-lg p-6 col-span-4">
-        <div class="grid grid-cols-3 text-center text-3xl pt-15">
-          <p class="">Rp 1.500.000</p>
-          <p class="">Rp 500.000</p>
-          <p class="">Rp 1.000.000</p>
-        </div>
-        <div class="grid grid-cols-3 text-center text-md pt-15 font-bold">
-          <p class="">Total Anggaran</p>
-          <p class="">Total Pengeluaran</p>
-          <p class="">Sisa Anggaran</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-2">
-      <div class="rounded-2xl bg-gray-100 shadow-lg p-6 m-4">
-        <p class="text-2xl">Makanan</p>
-        <div class="">
-          <div class="grid grid-cols-5">
-            <div class="col-span-1 ml-3 mt-5">
-              <i class="fa-solid fa-bowl-food text-6xl"></i>
-            </div>
-            <div class="col-span-4 text-2xl">
-              <div class="grid grid-cols-2">
-                <div class="col-span-1">
-                  <p>Anggaran</p>
-                  <p>Pengeluaran</p>
-                  <p>Sisa</p>
-                </div>
-                <div class="col-span-1">
-                  <p>Rp 250.000</p>
-                  <p>Rp 125.000</p>
-                  <p>Rp 125.000</p>
-                </div>
+        <!-- Ringkasan -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Saldo -->
+          <div
+            class="flex items-center justify-between p-4 rounded-xl shadow-lg bg-primary text-light"
+          >
+            <div>
+              <p class="text-sm lg:text-lg">Anggaran</p>
+              <div class="flex items-start gap-1 font-bold">
+                <span class="text-sm lg:text-lg">Rp</span>
+                <p class="text-2xl">500.000,00</p>
+                <button
+                  type="button"
+                  onclick="document.getElementById('modal-nominal-anggaran').classList.remove('hidden')"
+                  class="text-sm lg:text-lg text-netral-light"
+                >
+                  <i
+                    class="fa fa-edit fa-lg hover:text-light cursor-pointer transition duration-300 ease-in-out"
+                    aria-hidden="true"
+                  ></i>
+                </button>
               </div>
+            </div>
+            <div
+              class="h-10 w-10 rounded-full bg-light flex md:hidden lg:flex items-center justify-center"
+            >
+              <i class="fas fa-file-invoice-dollar text-2xl text-accent"></i>
+            </div>
+          </div>
+
+          <!-- Pemasukan -->
+          <div
+            class="flex items-center justify-between p-4 bg-primary text-light rounded-xl shadow"
+          >
+            <div>
+              <p class="text-sm lg:text-lg">Sisa</p>
+              <div class="flex items-start gap-1 font-bold">
+                <span class="text-sm lg:text-lg">Rp</span>
+                <p class="text-2xl">240.000,00</p>
+              </div>
+            </div>
+            <div
+              class="h-10 w-10 rounded-full bg-light flex md:hidden lg:flex items-center justify-center"
+            >
+              <i class="fas fa-wallet text-xl text-accent"></i>
+            </div>
+          </div>
+
+          <!-- Pengeluaran -->
+          <div
+            class="flex items-center justify-between p-4 bg-primary text-light rounded-xl shadow"
+          >
+            <div>
+              <p class="text-sm lg:text-lg">Rata-rata harian</p>
+              <div class="flex items-start gap-1 font-bold">
+                <span class="text-sm lg:text-lg">Rp</span>
+                <p class="text-2xl">25.000,00</p>
+              </div>
+            </div>
+            <div
+              class="h-10 w-10 rounded-full bg-light flex md:hidden lg:flex items-center justify-center"
+            >
+              <i class="fas fa-chart-line text-xl text-accent"></i>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="rounded-2xl bg-gray-100 shadow-lg p-6 m-4">
-        <p class="text-2xl">Dana Darurat</p>
-        <div class="">
-          <div class="grid grid-cols-5">
-            <div class="col-span-1 ml-10 mt-5">
-              <i class="fa-solid fa-sack-dollar text-6xl"></i>
+      <!-- Card Section -->
+      <div
+        class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
+      >
+        <!-- Anggaran -->
+        <section class="rounded-2xl bg-light shadow-lg p-6">
+          <!-- Judul -->
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center gap-2">
+              <div
+                class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
+              >
+                <i class="fa fa-train fa-md"></i>
+              </div>
+              <h2 class="text-lg font-semibold">Transportasi</h2>
             </div>
-            <div class="col-span-4 text-2xl">
-              <div class="grid grid-cols-2">
-                <div class="col-span-1">
-                  <p>Anggaran</p>
-                  <p>Pengeluaran</p>
-                  <p>Sisa</p>
+            <button
+              type="button"
+              onclick="document.getElementById('modal-rincian-anggaran').classList.remove('hidden')"
+              class="block px-[7px] rounded-full hover:bg-primary text-primary hover:text-light cursor-pointer transition duration-300 ease-in-out"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Konten Utama -->
+          <div
+            class="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 items-center lg:items-center justify-between"
+          >
+            <!-- Informasi Anggaran -->
+            <div class="w-full space-y-2 text-md sm:text-sm lg:text-lg">
+              <!-- Line -->
+              <div class="w-full bg-gray-200 rounded-xl p-1">
+                <div
+                  class="h-4 p-1 flex justify-center items-center text-xs font-medium rounded-full bg-accent"
+                  style="width: 80%"
+                >
+                  80%
                 </div>
-                <div class="col-span-1">
-                  <p>Rp 250.000</p>
-                  <p>Rp 125.000</p>
-                  <p>Rp 125.000</p>
-                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Anggaran</p>
+                <p class="text-right">60.000</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Pengeluaran</p>
+                <p class="text-right">40.000</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Sisa</p>
+                <p class="text-right">20.000</p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        <!-- Game -->
+        <section class="rounded-2xl bg-light shadow-lg p-6">
+          <!-- Judul -->
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center gap-2">
+              <div
+                class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
+              >
+                <i class="fa-brands fa-playstation fa-md"></i>
+              </div>
+              <h2 class="text-lg font-semibold">Game</h2>
+            </div>
+            <button
+              type="button"
+              onclick="document.getElementById('modal-rincian-anggaran').classList.remove('hidden')"
+              class="px-[7px] rounded-full hover:bg-primary text-primary hover:text-light cursor-pointer transition duration-300 ease-in-out"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Konten Utama -->
+          <div
+            class="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 items-center lg:items-center justify-between"
+          >
+            <!-- Informasi Anggaran -->
+            <div class="w-full space-y-2 text-md sm:text-sm lg:text-lg">
+              <!-- Line -->
+              <div class="w-full bg-gray-200 rounded-xl p-1">
+                <div
+                  class="h-4 p-1 flex justify-center items-center text-xs font-medium rounded-full bg-accent"
+                  style="width: 50%"
+                >
+                  50%
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Anggaran</p>
+                <p class="text-right">100.000</p>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Pengeluaran</p>
+                <p class="text-right">50.000</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Sisa</p>
+                <p class="text-right">50.000</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Makanan -->
+        <section class="rounded-2xl bg-light shadow-lg p-6">
+          <!-- Judul -->
+          <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center gap-2">
+              <div
+                class="flex justify-center items-center h-8 w-8 bg-primary text-light rounded-full cursor-pointer hover:bg-accent shadow-lg"
+              >
+                <i class="fa fa-utensils fa-md"></i>
+              </div>
+              <h2 class="text-lg font-semibold">Makanan</h2>
+            </div>
+            <button
+              type="button"
+              onclick="document.getElementById('modal-rincian-anggaran').classList.remove('hidden')"
+              class="px-[7px] rounded-full hover:bg-primary text-primary hover:text-light cursor-pointer transition duration-300 ease-in-out"
+            >
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Konten Utama -->
+          <div
+            class="flex flex-col lg:flex-row w-full gap-4 lg:gap-6 items-center lg:items-center justify-between"
+          >
+            <!-- Informasi Anggaran -->
+            <div class="w-full space-y-2 text-md sm:text-sm lg:text-lg">
+              <!-- Line -->
+              <div class="w-full bg-gray-200 rounded-xl p-1">
+                <div
+                  class="h-4 p-1 flex justify-center items-center text-xs font-medium rounded-full bg-accent"
+                  style="width: 50%"
+                >
+                  40%
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Anggaran</p>
+                <p class="text-right">100.000</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Pengeluaran</p>
+                <p class="text-right">40.000</p>
+              </div>
+              <div class="flex justify-between items-center">
+                <p class="lightspace-nowrap">Sisa</p>
+                <p class="text-right">60.000</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
@@ -343,7 +537,7 @@
     </div>
     <!-- End Modal Passw -->
 
-    <!-- Modal Transaksi Baru -->
+    <!-- Modal Anggaran Baru -->
     <div
       id="modal"
       class="fixed inset-0 z-50 flex items-center justify-center hidden bg-dark/50"
@@ -353,9 +547,7 @@
         <div
           class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
         >
-          <h3 class="text-lg font-semibold text-primary-dark">
-            Transaksi Baru
-          </h3>
+          <h3 class="text-lg font-semibold text-primary-dark">Anggaran Baru</h3>
           <button onclick="toggleModal()" class="text-dark hover:text-primary">
             <i class="fas fa-xmark"></i>
           </button>
@@ -381,23 +573,6 @@
               />
             </div>
 
-            <!-- Jenis Transaksi -->
-            <div class="sm:col-span-1">
-              <label
-                for="jenis-transaksi"
-                class="block mb-2 text-sm font-medium text-dark"
-                >Jenis Transaksi</label
-              >
-              <select
-                id="jenis-transaksi"
-                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
-              >
-                <option selected>Pilih Jenis</option>
-                <option value="In">Pemasukan</option>
-                <option value="Out">Pengeluaran</option>
-              </select>
-            </div>
-
             <!-- Nominal -->
             <div class="sm:col-span-1">
               <label
@@ -414,47 +589,6 @@
                 class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
               />
             </div>
-
-            <!-- Tanggal -->
-            <div class="sm:col-span-1">
-              <label
-                for="datepicker-autohide"
-                class="block mb-2 text-sm font-medium text-dark"
-                >Tanggal</label
-              >
-              <div class="relative w-full">
-                <div
-                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
-                >
-                  <i class="fa fa-calendar" aria-hidden="true"></i>
-                </div>
-                <input
-                  id="datepicker-autohide"
-                  type="text"
-                  placeholder="Select date"
-                  datepicker
-                  datepicker-autohide
-                  class="block w-full pl-10 p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
-                />
-              </div>
-            </div>
-
-            <!-- Keterangan -->
-            <div class="col-span-2">
-              <label
-                for="keterangan"
-                class="block mb-2 text-sm font-medium text-dark"
-                >Keterangan</label
-              >
-              <textarea
-                id="keterangan"
-                name="keterangan"
-                rows="3"
-                required
-                placeholder="Keterangan"
-                class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent resize-none"
-              ></textarea>
-            </div>
           </div>
 
           <!-- Footer Modal -->
@@ -469,6 +603,66 @@
             </button>
             <button
               type="submit"
+              class="px-4 py-2 text-light bg-accent rounded-lg hover:bg-primary transition dur</p>ation-300 ease-in-out"
+            >
+              Simpan
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End Modal Anggaran baru -->
+
+    <!-- Modal Input Nominal Anggaran -->
+    <div
+      id="modal-nominal-anggaran"
+      class="fixed inset-0 z-50 hidden bg-dark/50 flex items-center justify-center"
+    >
+      <div class="relative w-full max-w-md p-2 bg-light rounded-2xl shadow-lg">
+        <!-- Header Modal -->
+        <div
+          class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
+        >
+          <h3 class="text-lg font-semibold text-primary-dark">
+            Masukkan Nominal Anggaran
+          </h3>
+          <button
+            type="button"
+            onclick="document.getElementById('modal-nominal-anggaran').classList.add('hidden')"
+            class="text-dark hover:text-primary"
+          >
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Body Modal -->
+        <form class="p-4 md:p-6">
+          <div class="mb-4">
+            <label
+              for="nominal-anggaran"
+              class="block mb-2 text-sm font-medium text-dark"
+            >
+              Nominal Anggaran
+            </label>
+            <input
+              type="number"
+              id="nominal-anggaran"
+              name="nominal-anggaran"
+              placeholder="Masukkan nominal (contoh: 500000)"
+              required
+              class="block w-full p-2.5 text-sm text-dark bg-gray-50 border border-gray-300 rounded-lg focus:ring-accent focus:border-accent"
+            />
+          </div>
+          <!-- Footer Modal -->
+          <div class="flex items-center justify-end mt-6 gap-2">
+            <button
+              type="button"
+              onclick="document.getElementById('modal-nominal-anggaran').classList.add('hidden')"
+              class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+            >
+              Batal
+            </button>
+            <button
+              type="submit"
               class="px-4 py-2 text-light bg-accent rounded-lg hover:bg-primary transition duration-300 ease-in-out"
             >
               Simpan
@@ -477,7 +671,91 @@
         </form>
       </div>
     </div>
-    <!-- End Modal Transaksi -->
+
+    <!-- Modal Rincian Anggaran -->
+    <div
+      id="modal-rincian-anggaran"
+      class="fixed inset-0 z-50 hidden bg-dark/50 flex items-center justify-center"
+    >
+      <div class="relative w-full max-w-xl p-2 bg-light rounded-2xl shadow-lg">
+        <!-- Header Modal -->
+        <div
+          class="flex items-center justify-between bg-accent p-4 border-b rounded-t-lg md:p-5"
+        >
+          <h3 class="text-lg font-semibold text-primary-dark">
+            Rincian Anggaran (Transportasi)
+          </h3>
+          <button
+            type="button"
+            onclick="document.getElementById('modal-rincian-anggaran').classList.add('hidden')"
+            class="text-dark hover:text-primary"
+          >
+            <i class="fas fa-xmark"></i>
+          </button>
+        </div>
+        <!-- Body Modal -->
+        <div class="p-4 md:p-6 overflow-x-auto">
+          <table class="min-w-full text-sm text-left text-dark">
+            <thead class="bg-primary text-light">
+              <tr>
+                <th scope="col" class="px-4 py-2">Kategori</th>
+                <th scope="col" class="px-4 py-2">Jam/Tanggal</th>
+                <th scope="col" class="px-4 py-2">Nominal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Contoh data, ganti dengan data dinamis jika perlu -->
+              <tr class="border-b">
+                <td class="px-4 py-2">Transportasi</td>
+                <td class="px-4 py-2">10:30 / 02-05-2025</td>
+                <td class="px-4 py-4">
+                  <div
+                    class="flex justify-center items-center gap-1 text-sm lg:text-lg"
+                  >
+                    <span class="text-sm lg:text-lg text-danger">
+                      <i class="fa fa-minus" aria-hidden="true"></i>
+                    </span>
+                    <p>Rp20.000</p>
+                  </div>
+                </td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-4 py-2">Transportasi</td>
+                <td class="px-4 py-2">08:00 / 01-05-2025</td>
+                <td class="px-4 py-4">
+                  <div
+                    class="flex justify-center items-center gap-1 text-sm lg:text-lg"
+                  >
+                    <span class="text-sm lg:text-lg text-danger">
+                      <i class="fa fa-minus" aria-hidden="true"></i>
+                    </span>
+                    <p>Rp20.000</p>
+                  </div>
+                </td>
+              </tr>
+              <!-- Tambahkan baris lain sesuai kebutuhan -->
+            </tbody>
+          </table>
+        </div>
+        <!-- Footer Modal -->
+        <div class="flex items-center justify-between p-4">
+          <button
+            type="button"
+            class="text-light hover:text-red-800 px-2 py-1 bg-danger rounded-full transition duration-300 ease-in-out"
+            title="Hapus"
+          >
+            <i class="fa fa-trash"></i>
+          </button>
+          <button
+            type="button"
+            onclick="document.getElementById('modal-rincian-anggaran').classList.add('hidden')"
+            class="px-4 py-2 text-dark bg-gray-300 rounded-lg hover:bg-gray-400 transition duration-300 ease-in-out"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
 
     <!-- Scripts -->
     <!-- Fontawesome -->

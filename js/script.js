@@ -303,3 +303,36 @@ document.getElementById(
 
 // JS - Laporan ----------------------------------------------------|
 
+// JS - Anggaran ------------------------------------------------------|
+// Fungsi untuk menampilkan/menyembunyikan pemilih bulan
+function tampilkanPemilihBulan() {
+  const pemilihBulan = document.getElementById("pemilih-Bulan");
+  if (pemilihBulan) {
+    pemilihBulan.classList.toggle("hidden");
+  }
+}
+
+// Inisialisasi input bulan saat DOM siap
+document.addEventListener("DOMContentLoaded", function () {
+  const pemilihBulan = document.getElementById("pemilih-Bulan");
+  if (pemilihBulan) {
+    pemilihBulan.setAttribute("type", "month");
+    // Set default ke bulan & tahun saat ini
+    const now = new Date();
+    const bulan = String(now.getMonth() + 1).padStart(2, "0");
+    const tahun = now.getFullYear();
+    pemilihBulan.value = `${tahun}-${bulan}`;
+    // Event listener untuk perubahan bulan
+    pemilihBulan.addEventListener("change", function () {
+      aturBulanTerpilih(this.value);
+    });
+  }
+});
+
+// Fungsi untuk menangani perubahan bulan terpilih
+function aturBulanTerpilih(value) {
+  // value format: "YYYY-MM"
+  // Lakukan sesuatu dengan value, misal update tampilan anggaran
+  console.log("Bulan terpilih:", value);
+}
+// JS - Anggaran ------------------------------------------------------|
